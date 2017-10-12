@@ -33,7 +33,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
      * Space complexity (Table): O(m). m is the size of the charset.
      *
      * @param s
-     * @return int
+     * @return longest
      */
     public static int lengthOfLongestSubstring(String s) {
         if (s == null) {

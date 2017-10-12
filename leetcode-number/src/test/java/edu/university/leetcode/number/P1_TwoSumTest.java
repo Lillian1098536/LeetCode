@@ -1,3 +1,5 @@
+package edu.university.leetcode.number;
+
 import edu.university.leetcode.number.P1_TwoSum;
 import org.junit.Test;
 
