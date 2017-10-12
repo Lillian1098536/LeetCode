@@ -20,6 +20,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
     static final int NO_OF_CHARS = 256;
 
     /**
+     * Approach: Assumeing ASCII 256
      * If we know that the charset is rather small
      * we can replace the Map with an integer array as direct access table
      * Commonly used tables are:
@@ -52,6 +53,26 @@ public class LongestSubstringWithoutRepeatingCharacters {
             dict[s.charAt(i)] = i + 1;
         }
         log.debug("lengthOfLongestSubstring={}", longest);
+        return longest;
+    }
+
+    /**
+     * Approach:
+     *
+     * @param s
+     * @return longest
+     */
+    public static int longeseSubstring(String s) {
+        int longest = 0, start = 0;
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 0, len = s.length(); i < len; i++) {
+            if (map.containsKey(s.charAt(i))) {
+                start = Math.max(map.get(s.charAt(i)), start);
+            }
+            map.put(s.charAt(i), i + 1);
+            longest = Math.max(longest, i - start + 1);
+        }
+        log.debug("longeseSubstring={}", longest);
         return longest;
     }
 

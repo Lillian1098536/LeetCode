@@ -29,4 +29,27 @@ public class LongestSubstringWithoutRepeatingCharactersTest {
         assertEquals(2, result);
     }
 
+    @Test
+    public void longeseSubstringTest1() {
+        int result = LongestSubstringWithoutRepeatingCharacters.longeseSubstring("abc");
+        assertEquals(3, result);
+    }
+
+    @Test
+    public void longeseSubstringTest2() {
+        int result = LongestSubstringWithoutRepeatingCharacters.longeseSubstring("bbbbb");
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void longeseSubstringTest3() {
+        int result = LongestSubstringWithoutRepeatingCharacters.longeseSubstring("pwwkew");
+        assertEquals(3, result);
+    }
+
+    @Test
+    public void longeseSubstringTest4() {
+        int result = LongestSubstringWithoutRepeatingCharacters.longeseSubstring("aab");
+        assertEquals(2, result);
+    }
 }
