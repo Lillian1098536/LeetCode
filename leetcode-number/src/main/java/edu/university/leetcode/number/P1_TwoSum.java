@@ -23,7 +23,7 @@ public class P1_TwoSum {
      *
      * @param numbers
      * @param target
-     * @return result
+     * @return result[2]
      */
     public static int[] getTwoSumNumbers(int[] numbers, int target) {
         Map<Integer, Integer> map = new HashMap<>();
@@ -50,7 +50,6 @@ public class P1_TwoSum {
             if (map.containsKey(target - nums[i])) {
                 result[1] = i;
                 result[0] = map.get(target - nums[i]);
-                log.debug("The numbers are at postion= {}, {} and values = {}, {}", result[0], result[1], target - nums[i], nums[i]);
                 return result;
             }
             map.put(nums[i], i);

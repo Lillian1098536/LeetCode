@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>leetcode-number</module>
+        <module>leetcode-string</module>
     </modules>
     <packaging>pom</packaging>
 
