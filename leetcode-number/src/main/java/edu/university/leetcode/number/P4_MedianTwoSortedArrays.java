@@ -52,4 +52,35 @@ public class P4_MedianTwoSortedArrays {
         }
     }
 
+    public static double findMedianSortedArraysRecursive(int[] A, int[] B) {
+        int m = A.length, n = B.length;
+        int l = (m + n + 1) / 2, r = (m + n + 2) / 2;
+
+        return  (getKth(A, 0, B, 0, l) + getKth(A, 0 , B, 0, r)) / 2.0;
+    }
+
+    public static double getKth(int[] A, int aStart, int[] B, int bStart, int k) {
+        log.debug("k={} aStart={} bStart={}", k, aStart, bStart);
+        if (aStart > A.length - 1) return B[bStart + k - 1];
+        if (bStart > B.length - 1) return A[aStart + k - 1];
+
+        if (k == 1) {
+            log.debug("when k=1, median={}", Math.min(A[aStart], B[bStart]));
+            return Math.min(A[aStart], B[bStart]);
+        }
+
+        int aMid = ((aStart + k / 2 - 1) < A.length) ? A[aStart + k / 2 - 1] : Integer.MAX_VALUE;
+        int bMid = ((bStart + k / 2 - 1) < B.length) ? B[bStart + k / 2 - 1] : Integer.MAX_VALUE;
+
+        log.debug("aMid=A[{}]={} bMid=B[{}]={}", aStart + k / 2 - 1, aMid, bStart + k / 2 - 1, bMid);
+        if (aMid < bMid) {
+            // check: aRright + bLeft
+            log.debug("aStart={}", aStart + k / 2);
+            return getKth(A, aStart + k / 2, B, bStart, k - k / 2);
+        } else {
+            // check: bRight + aLeft
+            log.debug("bStart={}", bStart + k / 2);
+            return getKth(A, aStart, B, bStart + k / 2, k - k / 2);
+        }
+    }
 }
