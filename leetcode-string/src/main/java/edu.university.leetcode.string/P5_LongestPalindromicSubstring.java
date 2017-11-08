@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
  * Example: Input: "babad" Output: "bab"
  * Note: "aba" is also a valid answer.
  * Example: Input: "cbbd" Output: "bb"
+ * Time complexity: O ( n^2 ) where n is the length of input string.
+ * Auxiliary Space: O ( 1 )
  */
 @Slf4j
 public class P5_LongestPalindromicSubstring {
