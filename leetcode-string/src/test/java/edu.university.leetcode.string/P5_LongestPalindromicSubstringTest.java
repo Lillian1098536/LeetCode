@@ -23,4 +23,22 @@ public class P5_LongestPalindromicSubstringTest {
         assertEquals("bb", result);
     }
 
+    @Test
+    public void longestPalindrome4() throws Exception {
+        String result = P5_LongestPalindromicSubstring.longestPalindromeSubstring("forgeeksskeegfor");
+        assertEquals("geeksskeeg", result);
+    }
+
+    @Test
+    public void longestPalindrome5() throws Exception {
+        String result = P5_LongestPalindromicSubstring.longestPalindromeSubstring("babad");
+        assertEquals("aba", result);
+    }
+
+    @Test
+    public void longestPalindrome6() throws Exception {
+        String result = P5_LongestPalindromicSubstring.longestPalindromeSubstring("cbbd");
+        assertEquals("bb", result);
+    }
+
 }

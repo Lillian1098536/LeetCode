@@ -26,9 +26,10 @@ public class P5_LongestPalindromicSubstring {
             low = i - 1;
             high = i;
             while (low >= 0 && high < len && s.charAt(low) == s.charAt(high)) {
+                log.debug("center={}", i);
                 if (high - low + 1 > maxLength) {
                     start = low;
-                    log.debug("start={}", start);
+                    log.debug("even start={}", start);
                     maxLength = high - low + 1;
                 }
                 --low;
@@ -39,9 +40,10 @@ public class P5_LongestPalindromicSubstring {
             low = i - 1;
             high = i + 1;
             while (low >= 0 && high < len && s.charAt(low) == s.charAt(high)) {
+                log.debug("center={}", i);
                 if (high - low + 1 > maxLength) {
                     start = low;
-                    log.debug("start={}", start);
+                    log.debug("odd start={}", start);
                     maxLength = high - low + 1;
                 }
                 --low;
@@ -50,5 +52,28 @@ public class P5_LongestPalindromicSubstring {
         }
         log.debug("the longest palindrome substring of '{}' is '{}',length={}, start={}", s, s.substring(start, start + maxLength), maxLength, start);
         return s.substring(start, start + maxLength);
+    }
+
+    public static String longestPalindromeSubstring(String s) {
+        int start = 0, end = 0;
+        for (int i = 0, length = s.length(); i < length; i++) {
+            int len1 = expandAroundCenter(s, i, i);
+            int len2 = expandAroundCenter(s, i, i + 1);
+            int len = Math.max(len1, len2);
+            if (len > end - start) {
+                start = i - (len - 1) / 2;
+                end = i + len / 2;
+            }
+        }
+        return s.substring(start, end + 1);
+    }
+
+    public static int expandAroundCenter(String s, int left, int right) {
+        int L = left, R = right;
+        while (L >= 0 && R < s.length() && s.charAt(L) == s.charAt(R)) {
+            L--;
+            R++;
+        }
+        return R - L - 1;
     }
 }
