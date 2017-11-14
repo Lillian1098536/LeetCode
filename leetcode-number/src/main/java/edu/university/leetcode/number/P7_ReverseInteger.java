@@ -3,7 +3,8 @@ package edu.university.leetcode.number;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * 7. Given a 32-bit signed integer, reverse digits of an integer.
+ * 7. Reverse Integer
+ * Given a 32-bit signed integer, reverse digits of an integer.
  * The 32-bit int data type can hold integer values in the range of −2,147,483,648 to 2,147,483,647
  */
 @Slf4j
