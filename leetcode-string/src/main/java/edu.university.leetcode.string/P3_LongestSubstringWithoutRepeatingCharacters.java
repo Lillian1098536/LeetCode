@@ -15,7 +15,7 @@ import java.util.Map;
  * Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
  */
 @Slf4j
-public class LongestSubstringWithoutRepeatingCharacters {
+public class P3_LongestSubstringWithoutRepeatingCharacters {
 
     static final int NO_OF_CHARS = 256;
 

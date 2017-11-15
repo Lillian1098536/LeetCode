@@ -16,6 +16,7 @@ import java.util.HashMap;
 public class P1_TwoSum {
 
     /**
+     * 1. Two Sum
      * Approach: One-pass Hash Table
      * Complexity Analysis
      * Time complexity : O(n). Traverse the list containing n elements only once. Each look up in the table costs only O(1) time.
