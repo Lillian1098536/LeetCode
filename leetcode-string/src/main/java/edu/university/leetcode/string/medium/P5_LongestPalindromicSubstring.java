@@ -1,8 +1,8 @@
-package edu.university.leetcode.string;
+package edu.university.leetcode.string.medium;
 
 import lombok.extern.slf4j.Slf4j;
 
-/**
+ /**
  * 5. Longest Palindromic Substring
  * Given a string s, find the longest palindromic substring in s.
  * You may assume that the maximum length of s is 1000.

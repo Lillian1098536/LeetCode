@@ -1,8 +1,8 @@
-package edu.university.leetcode.number;
+package edu.university.leetcode.number.easy;
 
 import lombok.extern.slf4j.Slf4j;
 
-/**
+ /**
  * 7. Reverse Integer
  * Given a 32-bit signed integer, reverse digits of an integer.
  * The 32-bit int data type can hold integer values in the range of −2,147,483,648 to 2,147,483,647

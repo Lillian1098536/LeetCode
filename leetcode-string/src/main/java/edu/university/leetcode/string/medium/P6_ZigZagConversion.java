@@ -1,8 +1,8 @@
-package edu.university.leetcode.string;
+package edu.university.leetcode.string.medium;
 
 import lombok.extern.slf4j.Slf4j;
 
-/**
+ /**
  * 6. Zigzag Conversion
  * A zigzag is a pattern made up of small corners at variable angles, though constant within the zigzag, tracing a path between two parallel lines;
  * it can be described as both jagged and fairly regular.

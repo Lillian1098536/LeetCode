@@ -1,11 +1,11 @@
-package edu.university.leetcode.string;
+package edu.university.leetcode.string.medium;
 
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;
 import java.util.Map;
 
-/**
+ /**
  * 3. Longest Substring Without Repeating Characters
  * Given a string, find the length of the longest substring without repeating characters.
  * Examples:
