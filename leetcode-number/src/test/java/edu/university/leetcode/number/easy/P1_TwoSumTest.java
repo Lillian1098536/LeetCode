@@ -1,6 +1,5 @@
-package edu.university.leetcode.number;
+package edu.university.leetcode.number.easy;
 
-import edu.university.leetcode.number.P1_TwoSum;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

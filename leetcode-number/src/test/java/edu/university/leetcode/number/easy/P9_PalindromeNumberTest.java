@@ -1,8 +1,8 @@
-package edu.university.leetcode.number;
+package edu.university.leetcode.number.easy;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class P9_PalindromeNumberTest {
 

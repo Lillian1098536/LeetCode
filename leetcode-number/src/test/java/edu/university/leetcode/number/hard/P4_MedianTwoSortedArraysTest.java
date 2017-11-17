@@ -1,4 +1,4 @@
-package edu.university.leetcode.number;
+package edu.university.leetcode.number.hard;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

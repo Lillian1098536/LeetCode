@@ -1,10 +1,9 @@
-package edu.university.leetcode.number;
+package edu.university.leetcode.number.medium;
 
-import edu.university.leetcode.number.P2_AddTwoNumbers;
-import edu.university.leetcode.number.P2_AddTwoNumbers.ListNode;
+import edu.university.leetcode.number.medium.P2_AddTwoNumbers.ListNode;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class P2_AddTwoNumbersTest {
     @Test

@@ -2,7 +2,7 @@ package edu.university.leetcode.string.medium;
 
 import org.jsoup.helper.StringUtil;
 
- /**
+/**
  * 8. String to Integer atoi
  * Implement atoi to convert a string to an integer.
  * Hint: Carefully consider all possible input cases.

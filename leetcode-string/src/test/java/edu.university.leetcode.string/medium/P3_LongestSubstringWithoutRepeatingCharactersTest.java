@@ -1,4 +1,4 @@
-package edu.university.leetcode.string;
+package edu.university.leetcode.string.medium;
 
 import org.junit.Test;
 
