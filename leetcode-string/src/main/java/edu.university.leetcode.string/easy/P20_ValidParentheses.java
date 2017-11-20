@@ -44,4 +44,19 @@ public class P20_ValidParentheses {
         put('[', ']');
     }};
 
+    public static boolean isValidParentheses(String s) {
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            int q = "(){}[]".indexOf(s.substring(i, i + 1));
+            log.debug("q={}", q);
+            if (q % 2 == 1) {
+                if (stack.isEmpty() || stack.pop() != q - 1)
+                    return false;
+            } else {
+                stack.push(q);
+            }
+        }
+        return stack.empty();
+    }
+
 }
