@@ -41,4 +41,11 @@ public class P35_SearchInsertPositionTest {
         assertEquals(1, result);
     }
 
+    @Test
+    public void searchInsert6() throws Exception {
+        int[] nums = {1, 3};
+        int result = P35_SearchInsertPosition.searchInsertPosition(nums, 3);
+        assertEquals(1, result);
+    }
+
 }
