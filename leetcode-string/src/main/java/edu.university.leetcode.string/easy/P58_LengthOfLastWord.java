@@ -17,6 +17,7 @@ public class P58_LengthOfLastWord {
             return 0;
         }
         int result = 0;
+        //flag to checkout non-space characters int the end
         boolean falg = false;
         for (int i = s.length() - 1; i >= 0; i--) {
             char c = s.charAt(i);
