@@ -1,6 +1,6 @@
 package edu.university.leetcode.number.easy;
 
-import lombok.Data;
+import static edu.university.leetcode.number.medium.P2_AddTwoNumbers.ListNode;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -18,7 +18,7 @@ public class P21_MergeTwoSortedLists {
         ListNode tmp = head;
         while (l1 != null || l2 != null) {
             if (l1 != null && l2 != null) {
-                if (l1.value < l2.value) {
+                if (l1.val < l2.val) {
                     tmp.next = l1;
                     l1 = l1.next;
                 } else {
@@ -46,7 +46,7 @@ public class P21_MergeTwoSortedLists {
         if (l2 == null) {
             return l1;
         }
-        if (l1.value < l2.value) {
+        if (l1.val < l2.val) {
             l1.next = mergeTwoSortedLists(l1.next, l2);
             return l1;
         } else {
@@ -55,15 +55,4 @@ public class P21_MergeTwoSortedLists {
         }
     }
 
-
-    @Data
-    public static class ListNode {
-
-        int value;
-        public ListNode next;
-
-        public ListNode(int value) {
-            this.value = value;
-        }
-    }
 }

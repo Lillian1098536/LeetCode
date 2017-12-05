@@ -3,7 +3,7 @@ package edu.university.leetcode.number.easy;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-import static edu.university.leetcode.number.easy.P21_MergeTwoSortedLists.ListNode;
+import static edu.university.leetcode.number.medium.P2_AddTwoNumbers.ListNode;
 
 public class P21_MergeTwoSortedListsTest {
 
