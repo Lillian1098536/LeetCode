@@ -31,8 +31,8 @@ public class P2_AddTwoNumbers {
         int carry = 0;
         while (l1 != null || l2 != null || carry != 0) {
             ListNode tmp = new ListNode(0);
-            int sum = ((l2 == null) ? 0 : l2.value) + ((l1 == null) ? 0 : l1.value) + carry;
-            tmp.value = sum % 10;           //pass sum to tmp
+            int sum = ((l2 == null) ? 0 : l2.val) + ((l1 == null) ? 0 : l1.val) + carry;
+            tmp.val = sum % 10;           //pass sum to tmp
             carry = sum / 10;
             dummyHead.next = tmp;           //pass tmp to prev
             dummyHead = tmp;                //move pointer forward
@@ -47,10 +47,10 @@ public class P2_AddTwoNumbers {
     @Data
     public static class ListNode {
 
-        int value;
+        public int val;
         public ListNode next;
         public ListNode(int value) {
-            this.value = value;
+            this.val = value;
         }
     }
 
