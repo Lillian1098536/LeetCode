@@ -3,7 +3,7 @@ package edu.university.leetcode.number.medium;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
- /**
+/**
  * 2. Add Two Numbers
  * Given two non-empty linked lists representing two non-negative integers.
  * The digits are stored in reverse order and each of their nodes contain a single digit.
@@ -35,10 +35,12 @@ public class P2_AddTwoNumbers {
             tmp.val = sum % 10;           //pass sum to tmp
             carry = sum / 10;
             dummyHead.next = tmp;           //pass tmp to prev
+            log.debug("dummyHead={} dummyHead.next={}", dummyHead, dummyHead.next);
             dummyHead = tmp;                //move pointer forward
-            log.debug("tmp={}", tmp);
+            log.debug("after dummyHead={}", dummyHead);
             l1 = (l1 == null) ? l1 : l1.next;
             l2 = (l2 == null) ? l2 : l2.next;
+            log.debug("head={}", head);
         }
         log.debug("head={}", head);
         return head.next;
@@ -49,8 +51,9 @@ public class P2_AddTwoNumbers {
 
         public int val;
         public ListNode next;
-        public ListNode(int value) {
-            this.val = value;
+
+        public ListNode(int val) {
+            this.val = val;
         }
     }
 

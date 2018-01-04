@@ -1,13 +1,14 @@
 package edu.university.leetcode.number.easy;
 
 import static edu.university.leetcode.number.medium.P2_AddTwoNumbers.ListNode;
+
 import lombok.extern.slf4j.Slf4j;
 
 /**
  * P. 21 Merge Two Sorted Lists
- *
  * The key to solve the problem is defining a fake head. Then compare the first elements from each list.
- * Add the smaller one to the merged list. Finally, when one of them is empty, simply append it to the merged list, since it is already sorted.
+ * Add the smaller one to the merged list. Finally, when one of them is empty, simply append it to the merged list,
+ * since it is already sorted.
  */
 @Slf4j
 public class P21_MergeTwoSortedLists {
@@ -33,7 +34,7 @@ public class P21_MergeTwoSortedLists {
                 tmp.next = l1;
                 break;
             }
-            log.debug("tmp={}", tmp);
+            log.debug("tmp={} tmp.next={} head={}", tmp, tmp.next, head);
         }
         log.debug("head={}", head.next);
         return head.next;

@@ -21,6 +21,7 @@ public class P83_RemoveDuplicatesFromSortedList {
             if (node.val == node.next.val) {
                 node.next = node.next.next;
             } else {
+                // move forward pointer
                 node = node.next;
             }
             log.debug("node={} head={}", node, head);
