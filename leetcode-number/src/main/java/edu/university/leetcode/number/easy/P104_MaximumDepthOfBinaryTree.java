@@ -24,4 +24,8 @@ public class P104_MaximumDepthOfBinaryTree {
         return Math.max(findLevel(node.left, level + 1), findLevel(node.right, level + 1));
     }
 
+    public static int maxTreeDepth(TreeNode root) {
+        return root == null ? 0 : Math.max(maxTreeDepth(root.left), maxTreeDepth(root.right)) + 1;
+    }
+
 }
