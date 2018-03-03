@@ -17,7 +17,7 @@ public class P88_MergeSortedArray {
                 nums1[index--] = nums2[j--];
             }
         }
-        while (i > 0) {
+        while (i >= 0) {
             nums1[index--] = nums1[i--];
         }
         while (j >= 0) {
