@@ -1,7 +1,6 @@
-package edu.university.leetcode.number.easy;
+package edu.university.leetcode.tree.easy;
 
-import edu.university.leetcode.number.easy.P100_SameTree.TreeNode;
-import org.springframework.security.access.method.P;
+import edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
 
 /**
  * 104. Maximum Depth of Binary Tree

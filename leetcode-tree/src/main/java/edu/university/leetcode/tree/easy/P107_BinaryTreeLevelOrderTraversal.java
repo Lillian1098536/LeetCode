@@ -1,6 +1,6 @@
-package edu.university.leetcode.number.easy;
+package edu.university.leetcode.tree.easy;
 
-import edu.university.leetcode.number.easy.P100_SameTree.TreeNode;
+import edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

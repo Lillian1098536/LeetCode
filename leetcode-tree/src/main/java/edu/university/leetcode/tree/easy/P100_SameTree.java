@@ -1,4 +1,4 @@
-package edu.university.leetcode.number.easy;
+package edu.university.leetcode.tree.easy;
 
 /**
  * 100. Same Tree

@@ -1,4 +1,4 @@
-package edu.university.leetcode.number.easy;
+package edu.university.leetcode.tree.easy;
 
 /**
  * 108. Convert Sorted Array to Binary Search Tree
@@ -30,7 +30,7 @@ public class P108_ConvertSortedArrayToBinarySearchTree {
     }
 
 
-    public class TreeNode {
+    public static class TreeNode {
 
         int val;
         TreeNode left;
