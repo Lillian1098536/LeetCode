@@ -21,7 +21,7 @@ public class P125_ValidPalindrome {
         while (lo < hi) {
             if (!isAlphanumeric(s.charAt(lo))) {
                 lo++;
-                continue;;
+                continue;
             }
             if (!isAlphanumeric(s.charAt(hi))) {
                 hi--;
