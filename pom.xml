@@ -10,6 +10,8 @@
     <modules>
         <module>leetcode-number</module>
         <module>leetcode-string</module>
+        <module>leetcode-tree</module>
+        <module>leetcode-list</module>
     </modules>
     <packaging>pom</packaging>
 
