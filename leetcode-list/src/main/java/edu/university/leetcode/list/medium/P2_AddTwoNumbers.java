@@ -1,4 +1,4 @@
-package edu.university.leetcode.number.medium;
+package edu.university.leetcode.list.medium;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;

@@ -3,8 +3,6 @@ package edu.university.leetcode.number.easy;
 import static edu.university.leetcode.number.medium.P2_AddTwoNumbers.ListNode;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class P83_RemoveDuplicatesFromSortedListTest {
 
     @Test

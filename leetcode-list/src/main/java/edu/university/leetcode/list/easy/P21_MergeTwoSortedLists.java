@@ -1,6 +1,6 @@
-package edu.university.leetcode.number.easy;
+package edu.university.leetcode.list.easy;
 
-import static edu.university.leetcode.number.medium.P2_AddTwoNumbers.ListNode;
+import static edu.university.leetcode.list.medium.P2_AddTwoNumbers.ListNode;
 
 import lombok.extern.slf4j.Slf4j;
 
