@@ -1,6 +1,6 @@
-package edu.university.leetcode.number.medium;
+package edu.university.leetcode.list.medium;
 
-import edu.university.leetcode.number.medium.P2_AddTwoNumbers.ListNode;
+import static edu.university.leetcode.list.medium.P2_AddTwoNumbers.ListNode;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

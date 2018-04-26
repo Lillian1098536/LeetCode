@@ -1,8 +1,9 @@
-package edu.university.leetcode.number.easy;
+package edu.university.leetcode.list.easy;
+
+import static edu.university.leetcode.list.medium.P2_AddTwoNumbers.ListNode;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-
-import static edu.university.leetcode.number.medium.P2_AddTwoNumbers.ListNode;
 
 public class P21_MergeTwoSortedListsTest {
 

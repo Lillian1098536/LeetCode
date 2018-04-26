@@ -1,12 +1,12 @@
-package edu.university.leetcode.number.easy;
+package edu.university.leetcode.tree.easy;
 
-import edu.university.leetcode.number.easy.P100_SameTree.TreeNode;
 import org.junit.Test;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-import static org.junit.Assert.*;
+import static edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
+import static org.junit.Assert.assertTrue;
 
 public class P100_SameTreeTest {
 
