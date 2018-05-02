@@ -12,6 +12,7 @@
         <module>leetcode-string</module>
         <module>leetcode-tree</module>
         <module>leetcode-list</module>
+        <module>leetcode-stack</module>
     </modules>
     <packaging>pom</packaging>
 
