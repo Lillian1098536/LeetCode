@@ -1,4 +1,4 @@
-package edu.university.leetcode.number.easy;
+package edu.university.leetcode.array.easy;
 
 /**
  * 189. Rotate Array
