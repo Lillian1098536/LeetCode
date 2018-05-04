@@ -13,6 +13,7 @@
         <module>leetcode-tree</module>
         <module>leetcode-list</module>
         <module>leetcode-stack</module>
+        <module>leetcode-array</module>
     </modules>
     <packaging>pom</packaging>
 
