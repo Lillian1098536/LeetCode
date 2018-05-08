@@ -38,7 +38,8 @@ public class P125_ValidPalindrome {
     }
 
     private boolean isAlphanumeric(char c) {
-        if (Character.isDigit(c) || Character.isLetter(c)) {
+        if((c <= 'z' && c >= 'a') || (c >= '0' && c <= '9')) {
+//      if (Character.isDigit(c) || Character.isLetter(c)) {
             return true;
         } else {
             return false;
