@@ -1,6 +1,8 @@
 package edu.university.leetcode.number.easy;
 
 import static edu.university.leetcode.list.medium.P2_AddTwoNumbers.ListNode;
+
+import edu.university.leetcode.list.easy.P83_RemoveDuplicatesFromSortedList;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
