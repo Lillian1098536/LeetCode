@@ -1,6 +1,5 @@
-package edu.university.leetcode.number.easy;
+package edu.university.leetcode.list.easy;
 
-import edu.university.leetcode.list.easy.P234_PalindromeLinkedList;
 import org.junit.Test;
 
 import static edu.university.leetcode.list.medium.P2_AddTwoNumbers.ListNode;
