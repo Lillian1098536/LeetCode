@@ -17,7 +17,6 @@ import lombok.extern.slf4j.Slf4j;
  * the algorithm above iterates at most max(m, n) times.
  * Space complexity : OO(max(m,n)). The length of the new list is at most max(m,n) + 1.
  */
-@Slf4j
 public class P2_AddTwoNumbers {
 
     /**
@@ -26,23 +25,17 @@ public class P2_AddTwoNumbers {
      * @return sum
      */
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode dummyHead = new ListNode(0); //dummyHead as a pointer
-        ListNode head = dummyHead;
+        ListNode head = new ListNode(0), dummy = head;
         int carry = 0;
         while (l1 != null || l2 != null || carry != 0) {
-            ListNode tmp = new ListNode(0);
             int sum = ((l2 == null) ? 0 : l2.val) + ((l1 == null) ? 0 : l1.val) + carry;
-            tmp.val = sum % 10;           //pass sum to tmp
+            ListNode tmp = new ListNode(sum % 10);
             carry = sum / 10;
-            dummyHead.next = tmp;           //pass tmp to prev
-            log.debug("dummyHead={} dummyHead.next={}", dummyHead, dummyHead.next);
-            dummyHead = tmp;                //move pointer forward
-            log.debug("after dummyHead={}", dummyHead);
+            dummy.next = tmp;
+            dummy = dummy.next;
             l1 = (l1 == null) ? l1 : l1.next;
             l2 = (l2 == null) ? l2 : l2.next;
-            log.debug("head={}", head);
         }
-        log.debug("head={}", head);
         return head.next;
     }
 
