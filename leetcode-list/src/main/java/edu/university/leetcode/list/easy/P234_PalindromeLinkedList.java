@@ -11,18 +11,18 @@ public class P234_PalindromeLinkedList {
 
     public static boolean isPalindrome(ListNode head) {
         if (head == null && head.next == null) return true;
-        ListNode tmpHead = head, reverse = new ListNode(head.val);
+        ListNode tmpHead = head, rev = new ListNode(head.val);
         while (tmpHead.next != null) {
             tmpHead = tmpHead.next;
             ListNode tmp = new ListNode(tmpHead.val);
-            tmp.next = reverse;
-            reverse = tmp;
+            tmp.next = rev;
+            rev = tmp;
         }
-        if (head.val != reverse.val) return false;
+        if (head.val != rev.val) return false;
         while (head.next != null) {
             head = head.next;
-            reverse = reverse.next;
-            if (head.val != reverse.val) return false;
+            rev = rev.next;
+            if (head.val != rev.val) return false;
         }
         return true;
     }
