@@ -13,11 +13,11 @@ import java.util.Queue;
  * (ie, from left to right, level by level from leaf to root).
  * For example:
  * Given binary tree [3,9,20,null,null,15,7],
- *      3
- *     / \
- *    9  20
- *   /  \
- * 15   7
+ *       3
+ *      / \
+ *     9  20
+ *    /  \
+ *  15   7
  * return its bottom-up level order traversal as:
  * [
  *    [15,7],
