@@ -41,7 +41,7 @@ public class P13_RomanToInteger {
         int len = s.length();
         int answer = map.get(s.charAt(len - 1));
         for (int i = len - 2; i >= 0; i--) {
-            if (map.get(s.charAt(i + 1)) >= map.get(s.charAt(i))) {
+            if (map.get(s.charAt(i + 1)) > map.get(s.charAt(i))) {
                 answer -= map.get(s.charAt(i));
             } else {
                 answer += map.get(s.charAt(i));

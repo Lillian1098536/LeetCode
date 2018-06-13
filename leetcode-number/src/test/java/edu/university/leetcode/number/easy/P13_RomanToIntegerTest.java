@@ -29,4 +29,9 @@ public class P13_RomanToIntegerTest {
         assertEquals(6, result);
     }
 
+    @Test
+    public void romanToInteger5() throws Exception {
+        int result = P13_RomanToInteger.romanToInteger("III");
+        assertEquals(3, result);
+    }
 }
