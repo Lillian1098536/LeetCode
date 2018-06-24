@@ -1,6 +1,6 @@
 package edu.university.leetcode.tree.easy;
 
-import static edu.university.leetcode.tree.easy.P108_ConvertSortedArrayToBinarySearchTree.TreeNode;
+import static edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
 
 /**
  * 112. Path Sum

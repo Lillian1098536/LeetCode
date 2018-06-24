@@ -8,7 +8,7 @@ import java.util.Queue;
  * Given a binary tree, find its minimum depth.
  * The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
  */
-import static edu.university.leetcode.tree.easy.P108_ConvertSortedArrayToBinarySearchTree.TreeNode;
+import static edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
 public class P111_MinimumDepthOfBinaryTree {
 
     /**

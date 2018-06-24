@@ -1,4 +1,4 @@
-package edu.university.leetcode.number.easy;
+package edu.university.leetcode.binary.easy;
 
 /**
  * 191. Number of 1 Bits
@@ -8,7 +8,7 @@ package edu.university.leetcode.number.easy;
 public class P191_NumberOf1Bits {
 
     // you need to treat n as an unsigned value
-    public int hammingWeight(int n) {
+    public static int hammingWeight(int n) {
         int result = 0;
         for (int i = 0; i < 32; i++) {
             result += (n >>> i) & 1;
