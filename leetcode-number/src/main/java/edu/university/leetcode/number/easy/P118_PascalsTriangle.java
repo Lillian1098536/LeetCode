@@ -1,5 +1,7 @@
 package edu.university.leetcode.number.easy;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,9 +18,10 @@ import java.util.List;
  *   [1,4,6,4,1]
  * ]
  */
+@Slf4j
 public class P118_PascalsTriangle {
 
-    public List<List<Integer>> generate(int numRows) {
+    public static List<List<Integer>> generate(int numRows) {
         List<List<Integer>> list = new ArrayList<>();
         if (numRows <= 0) {
             return list;
@@ -27,6 +30,7 @@ public class P118_PascalsTriangle {
         for (int i = 1; i <= numRows; i++) {
             level.add(1);
             for (int j = level.size() - 2; j > 0; j--) {
+                log.info("i = {} j = {} level.get(j) = {} level.get(j - 1) = {}", i, j, level.get(j), level.get(j - 1));
                 level.set(j, level.get(j) + level.get(j - 1));
             }
             list.add(new ArrayList<>(level));

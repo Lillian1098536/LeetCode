@@ -48,7 +48,7 @@ public class P20_ValidParentheses {
         Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
             int q = "(){}[]".indexOf(s.substring(i, i + 1));
-            log.debug("q={}", q);
+            log.debug("q={} substring = {}", q, s.substring(i, i + 1));
             if (q % 2 == 1) {
                 if (stack.isEmpty() || stack.pop() != q - 1)
                     return false;

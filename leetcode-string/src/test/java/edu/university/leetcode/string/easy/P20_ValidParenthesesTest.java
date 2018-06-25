@@ -30,4 +30,16 @@ public class P20_ValidParenthesesTest {
         assertTrue(!result);
     }
 
+    @Test
+    public void isValid5() throws Exception {
+        boolean result = P20_ValidParentheses.isValidParentheses("([)]");
+        assertTrue(!result);
+    }
+
+    @Test
+    public void isValid6() throws Exception {
+        boolean result = P20_ValidParentheses.isValidParentheses("(){}[]");
+        assertTrue(result);
+    }
+
 }
