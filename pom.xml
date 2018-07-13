@@ -15,6 +15,7 @@
         <module>leetcode-stack</module>
         <module>leetcode-array</module>
         <module>leetcode-binary</module>
+        <module>leetcode-dynamic-programming</module>
     </modules>
     <packaging>pom</packaging>
 
