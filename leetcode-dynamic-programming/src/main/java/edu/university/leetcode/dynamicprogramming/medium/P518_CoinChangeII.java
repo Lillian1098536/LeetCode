@@ -19,7 +19,7 @@ package edu.university.leetcode.dynamicprogramming.medium;
  * Explanation: the amount of 3 cannot be made up just with coins of 2.
  * Example 3: Input: amount = 10, coins = [10] Output: 1
  */
-public class P518_CoinChange2 {
+public class P518_CoinChangeII {
 
     public int change(int amount, int[] coins) {
         int[] dp = new int[amount + 1];
