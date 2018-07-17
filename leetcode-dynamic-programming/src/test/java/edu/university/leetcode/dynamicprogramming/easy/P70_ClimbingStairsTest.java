@@ -1,4 +1,4 @@
-package edu.university.leetcode.number.easy;
+package edu.university.leetcode.dynamicprogramming.easy;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;

@@ -1,4 +1,4 @@
-package edu.university.leetcode.number.easy;
+package edu.university.leetcode.dynamicprogramming.easy;
 
 import lombok.extern.slf4j.Slf4j;
 

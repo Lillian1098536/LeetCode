@@ -1,4 +1,4 @@
-package edu.university.leetcode.number.easy;
+package edu.university.leetcode.dynamicprogramming.easy;
 
 /**
  * 70. Climbing Stairs
