@@ -31,4 +31,27 @@ public class P75_SortColors {
         log.info("nums = {}", nums);
     }
 
+    public static void sortColorsTwoPass(int[] nums) {
+        int[] ct = new int[3];
+
+        for(int n : nums){
+            ct[n]++;
+        }
+
+        ct[1] += ct[0];
+        ct[2] += ct[1];
+
+        for(int i = 0; i < ct[0]; i++){
+            nums[i] = 0;
+        }
+
+        for(int i = ct[0]; i < ct[1]; i++){
+            nums[i] = 1;
+        }
+
+        for(int i = ct[1]; i < nums.length; i++){
+            nums[i] = 2;
+        }
+    }
+
 }
