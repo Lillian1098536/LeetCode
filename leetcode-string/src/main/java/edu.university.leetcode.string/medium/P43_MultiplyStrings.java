@@ -36,4 +36,19 @@ public class P43_MultiplyStrings {
         return sb.toString();
     }
 
+    public static int multiplyWithoutOperater(int m, int n) {
+        int ans = 0, count = 0;
+        while (m > 0) {
+            log.info("m = {} n = {}  count = {}", m, n, count);
+            if (m % 2 == 1) {
+                log.info("n << count = {}", n << count);
+                ans += n << count;
+                log.info("ans = {}", ans);
+            }
+            count++;
+            m /= 2;
+        }
+        return ans;
+    }
+
 }

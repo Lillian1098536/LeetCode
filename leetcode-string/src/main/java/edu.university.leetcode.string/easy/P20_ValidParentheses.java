@@ -50,9 +50,11 @@ public class P20_ValidParentheses {
             int q = "(){}[]".indexOf(s.substring(i, i + 1));
             log.debug("q={} substring = {}", q, s.substring(i, i + 1));
             if (q % 2 == 1) {
+                log.info("pop({})", stack.peek());
                 if (stack.isEmpty() || stack.pop() != q - 1)
                     return false;
             } else {
+                log.info("push({})", q);
                 stack.push(q);
             }
         }

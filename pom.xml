@@ -50,6 +50,7 @@
         <version.jsoup>1.10.2</version.jsoup>
         <version.java>1.8</version.java>
         <version.lombok>1.16.12</version.lombok>
+        <version.apache.commons>3.0</version.apache.commons>
     </properties>
 
 
@@ -185,6 +186,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${version.lombok}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${version.apache.commons}</version>
         </dependency>
     </dependencies>
 

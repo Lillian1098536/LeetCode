@@ -11,4 +11,10 @@ public class P43_MultiplyStringsTest {
         assertEquals("56088", result);
     }
 
+    @Test
+    public void multiplyWithoutOperator() throws Exception {
+        int result = P43_MultiplyStrings.multiplyWithoutOperater(3,2);
+        assertEquals(6, result);
+    }
+
 }
