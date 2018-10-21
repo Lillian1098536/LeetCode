@@ -1,4 +1,4 @@
-package edu.university.leetcode.number.easy;
+package edu.university.leetcode.binary.easy;
 
 /**
  * 342. Power of Two

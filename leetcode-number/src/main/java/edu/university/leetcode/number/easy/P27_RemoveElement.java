@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
  * Your function should return length = 2, with the first two elements of nums being 2.
  */
 @Slf4j
-public class P27_Remove_Element {
+public class P27_RemoveElement {
 
     public static int removeElement(int[] nums, int val) {
         if (nums.length == 0) {

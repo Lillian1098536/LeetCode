@@ -1,5 +1,6 @@
-package edu.university.leetcode.number.easy;
+package edu.university.leetcode.binary.easy;
 
+import edu.university.leetcode.binary.easy.P231_PowerOfTwo;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
