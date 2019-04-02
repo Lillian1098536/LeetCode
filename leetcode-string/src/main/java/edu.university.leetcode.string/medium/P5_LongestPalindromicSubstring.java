@@ -16,7 +16,9 @@ import lombok.extern.slf4j.Slf4j;
 public class P5_LongestPalindromicSubstring {
 
     public static String longestPalindrome(String s) {
-
+        if (s == null || s.length() == 0) {
+            return "";
+        }
         int maxLength = 1, start = 0, low, high;
         // One by one consider every character as center
         // point of even and length palindromes
@@ -55,6 +57,9 @@ public class P5_LongestPalindromicSubstring {
     }
 
     public static String longestPalindromeSubstring(String s) {
+        if (s == null || s.length() == 0) {
+            return "";
+        }
         int start = 0, end = 0;
         for (int i = 0, length = s.length(); i < length; i++) {
             int len1 = expandAroundCenter(s, i, i);
