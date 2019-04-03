@@ -10,14 +10,14 @@ package edu.university.leetcode.dynamicprogramming.medium;
  */
 public class P152_MaximumProductSubarray {
 
-    public int maxProduct(int[] nums) {
+    public static int maxProduct(int[] nums) {
         if (nums == null || nums.length == 0) return 0;
         int global = nums[0], max = nums[0], min = nums[0];
-        for (int i = 1; i < nums.length; i++) {
-            int maxTmp = Math.max(max * nums[i], min * nums[i]);
-            int minTmp = Math.min(max * nums[i], min * nums[i]);
-            max = Math.max(maxTmp, nums[i]);
-            min = Math.min(minTmp, nums[i]);
+        for (int n : nums) {
+            int maxTmp = Math.max(max * n, min * n);
+            int minTmp = Math.min(max * n, min * n);
+            max = Math.max(maxTmp, n);
+            min = Math.min(minTmp, n);
             global = Math.max(global, max);
         }
         return global;
