@@ -16,4 +16,13 @@ public class P367_ValidPerfectSquare {
         return false;
     }
 
+    // O(lgn)
+    public boolean isSquare(int num) {
+        long x = num;
+        while (x * x > num) {
+            x = ((x + num) / x) / 2;
+        }
+        return x * x == num;
+     }
+
 }
