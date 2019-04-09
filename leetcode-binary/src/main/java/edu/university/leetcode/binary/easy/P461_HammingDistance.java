@@ -12,8 +12,7 @@ import lombok.extern.slf4j.Slf4j;
  * 1   (0 0 0 1)
  * 4   (0 1 0 0)
  *        ↑   ↑
-
- The above arrows point to positions where the corresponding bits are different.
+ * The above arrows point to positions where the corresponding bits are different.
  */
 @Slf4j
 public class P461_HammingDistance {
