@@ -12,7 +12,12 @@ public class P400_NthDigitTest {
     }
 
     @Test
-    public void findNthDigit111() {
+    public void findNthDigit12() {
         assertEquals(1, P400_NthDigit.findNthDigit(12));
+    }
+
+    @Test
+    public void findNthDigit111() {
+        assertEquals(0, P400_NthDigit.findNthDigit(111));
     }
 }

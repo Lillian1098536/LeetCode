@@ -26,10 +26,10 @@ public class P400_NthDigit {
         log.info("len = {} start = {}", len, start);
         int result;
         if (n % len == 0) {
-            log.info("n = {} string = {}", n, "" + (start + n / len));
+            log.info("n = {} subNum = {}", n, "" + (start + n / len));
             result = ("" + (start + n / len)).charAt(len - 1) - '0';
         } else {
-            log.info("n = {} >>> string = {}", n, "" + (start + n / len + 1));
+            log.info("n = {} >>> subNum = {}", n, "" + (start + n / len + 1));
             result = ("" + (start + n / len + 1)).charAt(n % len - 1) - '0';
         }
         return result;
