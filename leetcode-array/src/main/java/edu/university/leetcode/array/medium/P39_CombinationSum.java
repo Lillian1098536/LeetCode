@@ -1,5 +1,7 @@
 package edu.university.leetcode.array.medium;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -26,6 +28,7 @@ import java.util.List;
  *  [3,5]
  * ]
  */
+@Slf4j
 public class P39_CombinationSum {
 
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {
@@ -41,9 +44,11 @@ public class P39_CombinationSum {
     }
 
     private static void backTrack(int[] nums, int target, List<List<Integer>> result, ArrayList<Integer> list, int start) {
-        if (target < 0) return;;
+        log.info("start = {}", start);
+        if (target < 0) return;
         if (target == 0) {
             result.add(list);
+            log.info("add list = {}", list);
             return;
         }
         for (int i = start; i < nums.length && nums[i] <= target; i++) {
