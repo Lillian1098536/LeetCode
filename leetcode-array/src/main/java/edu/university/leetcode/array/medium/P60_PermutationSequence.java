@@ -26,32 +26,33 @@ import java.util.List;
 public class P60_PermutationSequence {
 
     public static String getPermutation(int n, int k) {
-        int total = 1;
+        int factorial = 1;
         List<Integer> tmp = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
         for (int i = 1; i <= n; i++) {
-            total *= i;
+            factorial *= i;
             tmp.add(i);
         }
-        find(tmp, sb, total, k);
+        find(tmp, sb, factorial, k);
         return sb.toString();
     }
 
-    private static void find(List<Integer> tmp, StringBuilder sb, int total, int k) {
-        log.info("tmp = {}", tmp);
-        log.info("total = {} k = {}", total, k);
+    private static void find(List<Integer> tmp, StringBuilder sb, int factorial, int k) {
+        log.info("factorial = {} k = {}", factorial, k);
         int n = tmp.size();
         if (n == 1) {
             sb.append(tmp.get(0));
             return;
         }
-        int index = (k * n - 1) / total;
-        int t = tmp.remove(index);
-        log.info("index = {} t = {}");
-        sb.append(t);
+        log.info("tmp = {} n = {}", tmp, n);
+        int nextFactorial = factorial / n;
+        // current index = (k - 1) / (n - 1)!
+        int index = (k - 1) / nextFactorial;
+        log.info("index = {}", index);
+        sb.append(tmp.remove(index));
         log.info("sb = {}", sb.toString());
-        find(tmp, sb, total / n, k - total / n * index);
+        // next k = (k - 1) % (n - 1)! + 1
+        find(tmp, sb, nextFactorial, (k - 1) % nextFactorial + 1);
     }
-
 
 }
