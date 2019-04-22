@@ -13,12 +13,12 @@ public class P252_MeetingRooms {
 
     public static boolean canAttendMeetings(Interval[] intervals) {
         if (intervals == null || intervals.length == 0) return false;
-        Arrays.sort(intervals, (t1, t2) ->  {
-                if (t1.start != t1.start) {
-                    return t1.start - t2.start;
-                } else {
-                    return t1.end - t2.end;
-                }
+        Arrays.sort(intervals, (t1, t2) -> {
+            if (t1.start != t1.start) {
+                return t1.start - t2.start;
+            } else {
+                return t1.end - t2.end;
+            }
         });
         for (int i = 1; i < intervals.length; i++) {
             if (intervals[i].start < intervals[i - 1].end) {
