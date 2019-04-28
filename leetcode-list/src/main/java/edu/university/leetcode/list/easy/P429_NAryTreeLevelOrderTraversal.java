@@ -43,8 +43,6 @@ public class P429_NAryTreeLevelOrderTraversal {
         return result;
     }
 
-
-
     public static class Node {
         public int val;
         public List<Node> children;
