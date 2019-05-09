@@ -1,4 +1,4 @@
-package edu.university.leetcode.string.easy;
+package edu.university.leetcode.stack.easy;
 
 import org.junit.Test;
 
@@ -15,5 +15,4 @@ public class PostfixExpressionTest {
     public void evaluatePostfix2() {
         assertEquals(-4, PostfixExpression.evaluatePostfixStack("231*+9-"));
     }
-
 }
