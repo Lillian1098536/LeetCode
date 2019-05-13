@@ -19,11 +19,11 @@ package edu.university.leetcode.array.easy;
 public class P492_ConstructTheRectangle {
 
     public int[] constructRectangle(int area) {
-        int x = (int) Math.ceil(Math.sqrt(area));
+        int x = (int) Math.sqrt(area);
         while (area % x != 0) {
-            x++;
+            x--;
         }
-        return new int[]{x, area / x};
+        return new int[]{area / x, x};
     }
 
 }
