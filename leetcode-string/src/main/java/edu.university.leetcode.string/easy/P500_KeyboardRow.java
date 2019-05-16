@@ -73,9 +73,6 @@ public class P500_KeyboardRow {
         group['M'] = 3;
     }
 
-    public P500_KeyboardRow() {
-    }
-
     public String[] findWords(String[] words) {
         List<String> resultList = new LinkedList<>();
         for (String word : words) {
