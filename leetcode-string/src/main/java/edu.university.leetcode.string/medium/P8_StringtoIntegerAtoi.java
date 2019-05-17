@@ -1,6 +1,7 @@
 package edu.university.leetcode.string.medium;
 
-import org.jsoup.helper.StringUtil;
+
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * 8. String to Integer atoi
@@ -12,7 +13,7 @@ import org.jsoup.helper.StringUtil;
 public class P8_StringtoIntegerAtoi {
 
     public static int myAtoi(String str) {
-        if (StringUtil.isBlank(str)) {
+        if (StringUtils.isBlank(str)) {
             return 0;
         }
         // trim white spaces
