@@ -26,7 +26,7 @@ public class P506_RelativeRanks {
         for (int i = max; i > -1; i--) {
             int index = map[i];
             if (index > 0) {
-                String s = "";
+                String s;
                 if (rank == 1) {
                     s = "Gold Medal";
                 } else if (rank == 2) {
