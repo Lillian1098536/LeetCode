@@ -17,7 +17,7 @@ public class P520_DetectCapital {
     public boolean detectCapitalUse(String word) {
         int count = 0, n = word.length();
         for (int i = 0; i < n; i++) {
-            if (word.charAt(i) <= 'Z') ++count;
+            if (word.charAt(i) <= 'Z') count++;
         }
         return count == 0 || count == n || (count == 1 && word.charAt(0)  <= 'Z');
     }
