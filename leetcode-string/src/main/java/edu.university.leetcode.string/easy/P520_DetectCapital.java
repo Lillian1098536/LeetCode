@@ -14,7 +14,7 @@ package edu.university.leetcode.string.easy;
  */
 public class P520_DetectCapital {
 
-    public boolean detectCapitalUse(String word) {
+    public static boolean detectCapitalUse(String word) {
         int count = 0, n = word.length();
         for (int i = 0; i < n; i++) {
             if (word.charAt(i) <= 'Z') count++;
