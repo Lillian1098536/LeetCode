@@ -41,10 +41,11 @@
         <version.java>11</version.java>
         <version.maven.plugin.compiler>3.8.1</version.maven.plugin.compiler>
         <version.apache.commons>3.0</version.apache.commons>
-        <version.slf4j>1.7.5</version.slf4j>
+        <version.slf4j>2.8.2</version.slf4j>
         <version.lombok>1.18.8</version.lombok>
         <version.javafx>11.0.2</version.javafx>
         <version.junit>4.12</version.junit>
+        <version.logback>1.1.7</version.logback>
     </properties>
 
 
@@ -55,9 +56,24 @@
             <version>${version.apache.commons}</version>
         </dependency>
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
             <version>${version.slf4j}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${version.slf4j}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${version.slf4j}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${version.logback}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
