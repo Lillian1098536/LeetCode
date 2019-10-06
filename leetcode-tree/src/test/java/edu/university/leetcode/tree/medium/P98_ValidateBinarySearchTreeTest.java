@@ -38,6 +38,11 @@ public class P98_ValidateBinarySearchTreeTest {
     }
 
     @Test
+    public void isValidBSTtrueN() {
+        assertTrue(tree.isValidateBSTNonRecursive(getTrueTree()));
+    }
+
+    @Test
     public void isValidBSTfalse() {
         assertTrue(!tree.isValidBST(getFlastTree()));
     }
@@ -45,6 +50,11 @@ public class P98_ValidateBinarySearchTreeTest {
     @Test
     public void isValidBSTfalse2() {
         assertTrue(!tree.isValidBST2(getFlastTree()));
+    }
+
+    @Test
+    public void isValidBSTfalseN() {
+        assertTrue(!tree.isValidateBSTNonRecursive(getFlastTree()));
     }
 
     private TreeNode getTrueTree() {

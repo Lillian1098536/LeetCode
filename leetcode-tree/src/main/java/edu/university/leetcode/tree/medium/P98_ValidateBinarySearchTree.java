@@ -3,6 +3,8 @@ package edu.university.leetcode.tree.medium;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Stack;
+
 import static edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
 
 /**
@@ -41,7 +43,6 @@ public class P98_ValidateBinarySearchTree {
     public boolean isValidBST(TreeNode root) {
         if (root != null) {
             LOG.debug("node value = {}", root.val);
-
         }
         if (root == null) return true;
         if (!isValidBST(root.left)) return false;
@@ -63,6 +64,39 @@ public class P98_ValidateBinarySearchTree {
             LOG.debug("node value = {}", node.val);
         }
         return node.val > min && node.val < max && dfs(node.left, min, node.val) && dfs(node.right, node.val, max);
+    }
+
+    public boolean isValidateBSTNonRecursive(TreeNode root) {
+        if (root == null) return true;
+        Stack<TreeNode> stack = new Stack<>();
+        int curValue = Integer.MIN_VALUE, preValue = Integer.MIN_VALUE, firstCompare = 1;
+        TreeNode current = root;
+        while (!stack.isEmpty() || root != null) {
+            if (root != null) {
+                LOG.debug("node value = {}", root.val);
+                LOG.debug("current node value = {}", current.val);
+                LOG.debug("curValue = {}", curValue);
+                LOG.debug("preValue = {}", preValue);
+                if (!stack.isEmpty()) {
+                    LOG.debug("stack = {}", stack.peek().val);
+                }
+            }
+            if (root != null) {
+                stack.push(root);
+                root = root.left;
+            } else {
+                current = stack.peek();
+                curValue = current.val;
+                if (curValue <= preValue && firstCompare == 0) {
+                    return false;
+                }
+                firstCompare = 0;
+                preValue = curValue;
+                stack.pop();
+                current = current.right;
+            }
+        }
+        return true;
     }
 
 }
