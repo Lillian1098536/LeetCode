@@ -41,7 +41,7 @@
         <version.java>11</version.java>
         <version.maven.plugin.compiler>3.8.1</version.maven.plugin.compiler>
         <version.apache.commons>3.0</version.apache.commons>
-        <version.slf4j>2.8.2</version.slf4j>
+        <version.slf4j>2.13.3</version.slf4j>
         <version.lombok>1.18.8</version.lombok>
         <version.javafx>11.0.2</version.javafx>
         <version.junit>4.12</version.junit>
