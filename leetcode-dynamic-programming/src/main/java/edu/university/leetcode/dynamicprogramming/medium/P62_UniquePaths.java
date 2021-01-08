@@ -19,11 +19,24 @@ public class P62_UniquePaths {
                 if (i == 0 || j == 0) {
                     dp[i][j] = 1;
                 } else {
-                    dp[i][j] = dp[i -1][j] + dp[i][j - 1];
+                    dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
                 }
             }
         }
         return dp[m - 1][n - 1];
     }
 
+    public static int uniquePathsDfs(int m, int n) {
+        return dfs(0, 0, m, n);
+    }
+
+    public static int dfs(int i, int j, int m, int n) {
+        if (i == m - 1 || j == n - 1) return 1;
+        if (i < m - 1 && j < n - 1) {
+            return dfs(i + 1, j , m, n) + dfs(j, j + 1, m, n);
+        }
+        if (i < m - 1) return dfs(i + 1, j, m, n);
+        if (j < n - 1) return dfs(i, j  + 1, m, n);
+        return 0;
+    }
 }
