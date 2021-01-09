@@ -1,6 +1,7 @@
 package edu.university.leetcode.dynamicprogramming.medium;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /**
  * 300. Longest Increasing Subsequence
@@ -11,14 +12,17 @@ import lombok.extern.slf4j.Slf4j;
  * There may be more than one LIS combination, it is only necessary for you to return the length.
  * Your algorithm should run in O(n2) complexity.
  */
-@Slf4j
 public class P300_LongestIncreasingSubsequence {
+
+    private static final Logger log = LoggerFactory.getLogger(P300_LongestIncreasingSubsequence.class);
 
     public static int lengthOfLIS(int[] nums) {
         int maxLen = 0;
         int[] dp = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
+            log.info("i = {}", i);
             for (int j = 0; j < i; j++) {
+                log.info("j = {}", j);
                 if (nums[i] > nums[j]) {
                     log.info("nums[{}] = {} nums[{}] = {}", i, nums[i], j, nums[j]);
                     dp[i] = Math.max(dp[i], dp[j] + 1);
