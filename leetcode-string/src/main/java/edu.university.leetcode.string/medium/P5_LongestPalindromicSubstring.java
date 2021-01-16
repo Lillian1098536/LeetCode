@@ -1,6 +1,8 @@
 package edu.university.leetcode.string.medium;
 
-import lombok.extern.slf4j.Slf4j;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 5. Longest Palindromic Substring
@@ -12,8 +14,9 @@ import lombok.extern.slf4j.Slf4j;
  * Time complexity: O ( n^2 ) where n is the length of input string.
  * Auxiliary Space: O ( 1 )
  */
-@Slf4j
 public class P5_LongestPalindromicSubstring {
+
+    private static final Logger LOG = LoggerFactory.getLogger(P5_LongestPalindromicSubstring.class);
 
     public static String longestPalindrome(String s) {
         if (s == null || s.length() == 0) {
@@ -28,10 +31,10 @@ public class P5_LongestPalindromicSubstring {
             low = i - 1;
             high = i;
             while (low >= 0 && high < len && s.charAt(low) == s.charAt(high)) {
-                log.debug("center={}", i);
+                LOG.debug("center={}", i);
                 if (high - low + 1 > maxLength) {
                     start = low;
-                    log.debug("even start={}", start);
+                    LOG.debug("even start={}", start);
                     maxLength = high - low + 1;
                 }
                 --low;
@@ -42,17 +45,17 @@ public class P5_LongestPalindromicSubstring {
             low = i - 1;
             high = i + 1;
             while (low >= 0 && high < len && s.charAt(low) == s.charAt(high)) {
-                log.debug("center={}", i);
+                LOG.debug("center={}", i);
                 if (high - low + 1 > maxLength) {
                     start = low;
-                    log.debug("odd start={}", start);
+                    LOG.debug("odd start={}", start);
                     maxLength = high - low + 1;
                 }
                 --low;
                 ++high;
             }
         }
-        log.debug("the longest palindrome substring of '{}' is '{}',length={}, start={}", s, s.substring(start, start + maxLength), maxLength, start);
+        LOG.debug("the longest palindrome substring of '{}' is '{}',length={}, start={}", s, s.substring(start, start + maxLength), maxLength, start);
         return s.substring(start, start + maxLength);
     }
 
@@ -81,4 +84,34 @@ public class P5_LongestPalindromicSubstring {
         }
         return R - L - 1;
     }
+
+    /**
+     * dynamic programming
+     * Time O(n^2) Space O(n^2)
+     */
+    public String dpLongestPalindrome(String s) {
+        if (s == null || s.length() < 1) return s;
+        int len = s.length(), maxLen = 1;
+        String longest = null;
+        boolean[][] dp = new boolean[len][len];
+        for (int l = 0; l < len; l++) {
+            for (int i = 0; i < len - 1; i++) {
+                int j = i + 1;
+                if (s.charAt(i) ==  s.charAt(j) && (j - i < 2 || dp[i + 1][j - 1])) {
+                    dp[i][j] = true;
+                    if (j - i + 1 > maxLen) {
+                        maxLen = j - i + 1;
+                        longest = s.substring(i, j + 1);
+                    }
+                }
+            }
+        }
+        return longest;
+    }
+
+    /**
+     * recursive
+     * Time O(n^2) Space O(n^2)
+     */
+
 }
