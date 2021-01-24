@@ -3,6 +3,7 @@ package edu.university.leetcode.string.medium;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -15,31 +16,23 @@ import java.util.List;
 public class P17_LetterCombinationsOfAPhoneNumber {
 
     public static List<String> letterCombinations(String digits) {
-        String[] dic = { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
-        List<String> res = new ArrayList<>();
-        StringBuilder sb = new StringBuilder();
-        dfs(res, digits, sb, dic, 0);
+        char[][] dic = {{}, {}, {'a','b','c'}, {'d','e','f'}, {'g','h','i'}, {'j','k','l'}, {'m','n','o'}, {'p','q','r','s'}, {'t','u','v'}, {'w','x','y','z'}};
+        List<String> res = new LinkedList<>();
+        dfs(res, digits.toCharArray(), new char[digits.length()], dic, 0);
         return res;
     }
 
-    private static void dfs(List<String> res, String digits, StringBuilder sb, String[] dic, int pos) {
-        if (digits.length() == pos) {
-            log.info("res.add(sb.toString()) = {}", sb.toString());
-            res.add(sb.toString());
-            return;
+    private static void dfs(List<String> res, char[] digits, char[] c, char[][] dic, int pos) {
+        log.info("digits = {} pos = {}", digits, pos);
+        if (digits.length == pos) {
+            log.info("res.add(c) = {}", String.valueOf(c));
+            res.add(String.valueOf(c));
         } else {
-            String str = dic[digits.charAt(pos) - '0'];
-            log.info("str = {}", str);
-            for (int i = 0; i < str.length(); i++) {
-                log.info("          sb.append = {}", dic[digits.charAt(pos) - '0'].charAt(i));
-                sb.append(str.charAt(i));
-                dfs(res, digits, sb, dic, pos + 1);
-                log.info("                              sb.delete = {}", sb.charAt(sb.length() - 1));
-                sb.deleteCharAt(sb.length() - 1);
+            for (char cur : dic[digits[pos] - '0']) {
+                log.info("                      cur = {} c = {}", cur, c);
+                c[pos] = cur;
+                dfs(res, digits, c, dic,pos + 1);
             }
         }
-
     }
-
-
 }
