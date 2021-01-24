@@ -18,6 +18,7 @@ public class P17_LetterCombinationsOfAPhoneNumber {
     public static List<String> letterCombinations(String digits) {
         char[][] dic = {{}, {}, {'a','b','c'}, {'d','e','f'}, {'g','h','i'}, {'j','k','l'}, {'m','n','o'}, {'p','q','r','s'}, {'t','u','v'}, {'w','x','y','z'}};
         List<String> res = new LinkedList<>();
+        if (digits == null || digits.isBlank()) return res;
         dfs(res, digits.toCharArray(), new char[digits.length()], dic, 0);
         return res;
     }
