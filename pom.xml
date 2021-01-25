@@ -44,7 +44,7 @@
         <version.slf4j>2.14.0</version.slf4j>
         <version.lombok>1.18.16</version.lombok>
         <version.javafx>11.0.2</version.javafx>
-        <version.junit>4.12</version.junit>
+        <version.junit>4.13.1</version.junit>
         <version.logback>1.2.3</version.logback>
     </properties>
 
