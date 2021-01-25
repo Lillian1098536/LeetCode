@@ -13,12 +13,12 @@ package edu.university.leetcode.string.easy;
  * 28 -> AB
  */
 public class P168_ExcelSheetColumnTitle {
-    public String convertToTitle(int n) {
+    public static String convertToTitle(int n) {
         StringBuilder result = new StringBuilder();
         while (n > 0) {
             n--;
-            result.insert(0, MAP[n % 26]);
-            // result.insert(0, (char)('A' + (n % 26)));
+//            result.insert(0, MAP[n % 26]);
+            result.insert(0, (char)('A' + (n % 26)));
             n /= 26;
         }
         return result.toString();
