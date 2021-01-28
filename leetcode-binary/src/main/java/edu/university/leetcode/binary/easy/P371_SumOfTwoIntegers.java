@@ -12,14 +12,15 @@ import lombok.extern.slf4j.Slf4j;
 public class P371_SumOfTwoIntegers {
 
     public static int getSum(int a, int b) {
+        log.info("a = {} b = {}", a, b);
         if (b == 0) {
             log.info("sum = {}", a);
             return a;
         }
         int sum = a ^ b;
-        log.info("tmp = {}", Integer.toBinaryString(sum));
+        log.info("sum = {} -> binary = {}", sum, Integer.toBinaryString(sum));
         int carry = (a & b) << 1;
-        log.info("carry = {}", Integer.toBinaryString(carry));
+        log.info("carry = {} -> binary = {}", carry, Integer.toBinaryString(carry));
         return getSum(sum, carry);
     }
 
