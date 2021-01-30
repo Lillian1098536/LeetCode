@@ -19,6 +19,7 @@ public class P41_FirstMissingPositive {
     private static final Logger LOG = LoggerFactory.getLogger(P41_FirstMissingPositive.class);
 
     public int firstMissingPositive(int[] nums) {
+        LOG.info("nums = {}", nums);
         bucketSort(nums);
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != i + 1) {
@@ -48,8 +49,8 @@ public class P41_FirstMissingPositive {
                 LOG.info("tmp = {}", tmp);
                 nums[i] = nums[tmp - 1];
                 nums[tmp - 1] = tmp;
+                LOG.info("nums = {}", nums);
             }
         }
-        LOG.info("nums = {}", nums);
     }
 }
