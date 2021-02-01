@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -21,6 +22,7 @@ import java.util.List;
  */
 public class P78_Subsets {
     private static final Logger LOG = LoggerFactory.getLogger(P78_Subsets.class);
+
     /**
      * brute-force attack / exhaustive key search
      * time complex O(2^n) space complex O(n)
@@ -45,5 +47,19 @@ public class P78_Subsets {
         subset(nums, list, step + 1, result);
         LOG.info("remove list last index = {}", list);
         list.remove(list.size() - 1);
+    }
+
+    public List<List<Integer>> subsets2(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        result.add(new LinkedList<>());
+        for(int n : nums){
+            int size = result.size();
+            for(int j = 0; j < size; j++){
+                List<Integer> list = new LinkedList<>(result.get(j));
+                list.add(n);
+                result.add(list);
+            }
+        }
+        return result;
     }
 }

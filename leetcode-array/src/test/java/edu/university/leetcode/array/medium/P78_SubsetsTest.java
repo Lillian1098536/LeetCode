@@ -24,5 +24,16 @@ public class P78_SubsetsTest {
                 Arrays.asList(1, 2, 3)
                 );
         assertEquals(expected, test.subsets(new int[] {1, 2, 3}));
+        List<List<Integer>> expected2 = Arrays.asList(
+                new ArrayList<>(),
+                Arrays.asList(1),
+                Arrays.asList(2),
+                Arrays.asList(1, 2),
+                Arrays.asList(3),
+                Arrays.asList(1, 3),
+                Arrays.asList(2, 3),
+                Arrays.asList(1, 2, 3)
+        );
+        assertEquals(expected2, test.subsets2(new int[] {1, 2, 3}));
     }
 }
