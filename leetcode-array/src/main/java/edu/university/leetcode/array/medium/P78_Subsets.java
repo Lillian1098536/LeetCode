@@ -54,8 +54,8 @@ public class P78_Subsets {
         result.add(new LinkedList<>());
         for(int n : nums){
             int size = result.size();
-            for(int j = 0; j < size; j++){
-                List<Integer> list = new LinkedList<>(result.get(j));
+            for(int i = 0; i < size; i++){
+                List<Integer> list = new LinkedList<>(result.get(i));
                 list.add(n);
                 result.add(list);
             }
