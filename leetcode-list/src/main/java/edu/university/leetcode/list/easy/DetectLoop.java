@@ -38,6 +38,19 @@ public class DetectLoop {
         return false;
     }
 
+    public static boolean detectLoop2(ListNode node) {
+        ListNode slow = node.next == null ? null : node.next;
+        ListNode fast = node.next.next == null ? null : node.next.next;
+        while (slow != null && fast != null) {
+            if (slow == fast) {
+                return true;
+            }
+            slow = slow.next == null ? null : slow.next;
+            fast = fast.next.next == null ? null : fast.next.next;
+        }
+        return false;
+    }
+
     public static void main (String[] args) {
         DetectLoop loop = new DetectLoop();
         loop.pushNode(20);
@@ -45,6 +58,12 @@ public class DetectLoop {
         loop.pushNode(15);
         loop.pushNode(10);
         loop.head.next.next.next.next = loop.head;
+
+        if (detectLoop2(head)) {
+            System.out.println("2 Loop found");
+        } else {
+            System.out.println("2 No loop");
+        }
 
         if (detectLoop(head)) {
             System.out.println("Loop found");
