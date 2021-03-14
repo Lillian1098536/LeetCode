@@ -10,7 +10,7 @@ package edu.university.leetcode.number.medium;
  */
 public class P29_DivideTwoIntegers {
 
-    public int divide(int dividend, int divisor) {
+    public static int divide(int dividend, int divisor) {
         if (divisor == 0) throw new ArithmeticException("/ by zero");
         if (dividend == 0) return 0;
         boolean sign = (dividend < 0) ^ (divisor < 0);
@@ -27,7 +27,7 @@ public class P29_DivideTwoIntegers {
             dividendLong -= tmp;
             quotient += factor;
         }
-        return (int)(sign ? quotient : -quotient);
+        return (int)(sign ? -quotient : quotient);
     }
 
 }

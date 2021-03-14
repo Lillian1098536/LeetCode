@@ -1,5 +1,8 @@
 package edu.university.leetcode.list.hard;
 
+import edu.university.leetcode.list.medium.P2_AddTwoNumbers;
+
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
@@ -43,5 +46,30 @@ public class P23_MergeKSortedLists {
         public int compareTo(ListNode o) {
             return this.val - o.val;
         }
+    }
+
+    public P2_AddTwoNumbers.ListNode mergeKListss(P2_AddTwoNumbers.ListNode[] lists) {
+        PriorityQueue<P2_AddTwoNumbers.ListNode> q = new PriorityQueue<P2_AddTwoNumbers.ListNode>(Math.max(1, lists.length),
+                new Comparator<P2_AddTwoNumbers.ListNode>() {
+            @Override
+            public int compare(P2_AddTwoNumbers.ListNode o1, P2_AddTwoNumbers.ListNode o2) {
+                return o1.val - o2.val;
+            }
+        });
+        for (P2_AddTwoNumbers.ListNode list : lists) {
+            if (list != null) q.add(list);
+        }
+        P2_AddTwoNumbers.ListNode dummy = new P2_AddTwoNumbers.ListNode(-1);
+        P2_AddTwoNumbers.ListNode p = dummy;
+        while (!q.isEmpty()) {
+            P2_AddTwoNumbers.ListNode node = q.poll();
+            if (node.next != null) {
+                q.add(node.next);
+            }
+            node.next = null;
+            p.next = node;
+            p = node;
+        }
+        return dummy.next;
     }
 }
