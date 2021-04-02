@@ -20,7 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 public class P198_HouseRobber {
 
     public static int rob(int[] nums) {
-        if (nums.length == 0 || nums == null) {
+        if (nums == null || nums.length == 0) {
             return 0;
         }
         if (nums.length > 2) {
