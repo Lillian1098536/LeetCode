@@ -18,23 +18,18 @@ package edu.university.leetcode.dynamicprogramming.medium;
  */
 public class P213_HouseRobberII {
     public int rob(int[] nums) {
-        if (nums.length == 0) {
-            return 0;
-        } else if (nums.length == 1) {
-            return nums[0];
-        } else {
-            return Math.max(range(nums, 0, nums.length - 2), range(nums, 1, nums.length - 1));
-        }
+        if (nums.length == 0) return 0;
+        else if (nums.length == 1) return nums[0];
+        return Math.max(rob(nums, 0, nums.length - 2), rob(nums, 1, nums.length - 1));
     }
-
-    private int range(int[] nums, int start, int end) {
-        int with = nums[start], without = 0;
+    private int rob(int[] nums, int start, int end) {
+        int even = nums[start], odd = 0;
         for (int i = start + 1; i <= end; i++) {
-            int newWith = without + nums[i];
-            int newWithout = Math.max(with, without);
-            with = newWith;
-            without = newWithout;
+            int newEven = odd + nums[i];
+            int newOdd = Math.max(even, odd);
+            even = newEven;
+            odd = newOdd;
         }
-        return Math.max(with, without);
+        return Math.max(even, odd);
     }
 }
