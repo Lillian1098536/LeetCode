@@ -16,6 +16,7 @@ package edu.university.leetcode.dynamicprogramming.easy;
  * 1 <= n <= 1000
  */
 public class P1025_DivisorGame {
+    //Time complexity: O(n^2)
     public boolean divisorGame(int n) {
         boolean[] dp = new boolean[n + 1];
         dp[0] = false;
@@ -33,6 +34,7 @@ public class P1025_DivisorGame {
         return dp[n];
     }
 
+    // Time complexity: O(1)
     public boolean divisor(int n) {
         return n % 2 == 0;
     }
