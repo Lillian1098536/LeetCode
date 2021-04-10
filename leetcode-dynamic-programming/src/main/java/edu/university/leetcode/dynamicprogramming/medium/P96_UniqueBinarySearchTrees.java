@@ -21,7 +21,7 @@ public class P96_UniqueBinarySearchTrees {
                         // n-i in right * i-1 in left
                 LOG.info("i = {} j = {} dp[i - j] = {} dp[j - 1] = {}", i, j, dp[i - j], dp[j - 1]);
                 dp[i] = dp[i] + (dp[i - j] * dp[j - 1]);
-                LOG.info("              dp[i] = {}", dp[i]);
+                LOG.info("            dp[i] = {}", dp[i]);
             }
         }
         return dp[n];
