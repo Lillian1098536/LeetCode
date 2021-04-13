@@ -1,5 +1,8 @@
 package edu.university.leetcode.dynamicprogramming.medium;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Arrays;
 
 /**
@@ -29,6 +32,7 @@ import java.util.Arrays;
  * s contains only digits and may contain leading zero(s).
  */
 public class P91_DecodeWays {
+    private static final Logger LOG = LoggerFactory.getLogger(P91_DecodeWays.class);
     public int numDecoding(String s) {
         if (s == null || s.length() == 0) { return 0; }
 
@@ -47,7 +51,7 @@ public class P91_DecodeWays {
                 }
             }
         }
-
+        LOG.info("ways={}", ways);
         return ways[0];
     }
 }
