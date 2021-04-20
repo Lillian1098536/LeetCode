@@ -20,14 +20,14 @@ import java.util.Stack;
  * 1 <= nestedList.length <= 500
  * The values of the integers in the nested list is in the range [-106, 106].
  */
-public class NestedIterator implements Iterator<Integer> {
+public class P341_FlattenNestedListIterator implements Iterator<Integer> {
     public interface  NestedInteger {
         boolean isInteger();
         Integer getInteger();
         List<NestedInteger> getList();
     }
     Stack<NestedInteger> stack = new Stack<>();
-    public NestedIterator(List<NestedInteger> nestedList) {
+    public P341_FlattenNestedListIterator(List<NestedInteger> nestedList) {
         if (nestedList == null) return;
         for (int i = nestedList.size() - 1; i >= 0; i--) {
             stack.push(nestedList.get(i));
