@@ -18,6 +18,7 @@ import java.util.Stack;
  */
 public class P224_BasicCalculator {
     private static final Logger LOG = LoggerFactory.getLogger(P224_BasicCalculator.class);
+
     public int calculate(String s) {
         int result = 0, len = s.length(), sign = 1;
         Stack<Integer> stack = new Stack<>();
@@ -25,7 +26,7 @@ public class P224_BasicCalculator {
             LOG.info("c={} stack={} result={}", s.charAt(i), stack, result);
             if (Character.isDigit(s.charAt(i))) {
                 int sum = s.charAt(i) - '0';
-                while (i + 1 < len && Character.isDigit(i + 1)) {
+                while (i + 1 < len && Character.isDigit(s.charAt(i + 1))) {
                     sum = sum * 10 + s.charAt(i + 1) - '0';
                     i++;
                 }
