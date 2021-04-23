@@ -8,8 +8,8 @@ import java.util.LinkedList;
  * Given a string s which represents an expression, evaluate this expression and return its value.
  * The integer division should truncate toward zero.
  * Example 1: Input: s = "3+2*2" Output: 7
- * Example 2: Input: s = " 3/2 " Output: 1
- * Example 3: Input: s = " 3+5 / 2 " Output: 5
+ * Example 2: Input: s = "3/2" Output: 1
+ * Example 3: Input: s = "3+5/2" Output: 5
  * Constraints:
  * 1 <= s.length <= 3 * 105
  * s consists of integers and operators ('+', '-', '*', '/') separated by some number of spaces.
