@@ -12,7 +12,7 @@ package edu.university.leetcode.array.medium;
  */
 public class P33_SearchInRotatedSortedArray {
 
-    public static int search(int[] nums, int target) {
+    public int search(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
 
         while (left <= right) {
