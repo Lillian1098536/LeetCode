@@ -33,7 +33,7 @@ public class P81_SearchInRotatedSortedArrayII {
                     left = mid + 1;
                 }
             } else {
-                if (nums[mid] >= target && nums[right] >= target) {
+                if (nums[mid] <= target && nums[right] >= target) {
                     left = mid + 1;
                 } else {
                     right = mid - 1;
