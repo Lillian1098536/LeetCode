@@ -9,5 +9,7 @@ public class P33_SearchInRotatedSortedArrayTest {
     @Test
     public void search() {
         assertEquals(2, test.search(new int[]{6, 7, 0, 1, 2, 4, 5}, 0));
+        assertEquals(4, test.search(new int[]{4, 5, 6, 7, 0, 1, 2}, 0));
+        assertEquals(-1, test.search(new int[]{4, 5, 6, 7, 0, 1, 2}, 3));
     }
 }
