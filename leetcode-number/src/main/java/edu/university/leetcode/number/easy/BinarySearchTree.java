@@ -87,13 +87,13 @@ public class BinarySearchTree {
         node.right = sortedArrayToBST(nums, m + 1, r);
         return node;
     }
-    
+
     public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode(int x) {
-            this.val = x;
+        TreeNode(int val) {
+            this.val = val;
             this.left = this.right = null;
         }
     }
