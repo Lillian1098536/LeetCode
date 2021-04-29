@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -78,5 +79,74 @@ public class P336_PalindromePairs {
         String[] words = new String[]{"abcd", "dcba", "lls", "s", "sssll"};
         List<List<Integer>> result = test.palindromePairs(words);
         System.out.println("result >>> " + result);
+    }
+
+    public List<List<Integer>> palindromePairsByTrie(String[] words) {
+        Trie trie = new Trie();
+        List<List<Integer>> result = new ArrayList<>();
+        for (int i = 0; i < words.length; i++) {
+            trie.insert(words[i], i);
+        }
+        for (int i = 0; i < words.length; i++) {
+            trie.find(words[i], i, result);
+        }
+        return result;
+    }
+
+        public static class TrieNode {
+        int index;
+        List<Integer> palindromeList;
+        TrieNode[] children;
+        public TrieNode() {
+            index = -1;
+            palindromeList = new ArrayList<>();
+            children = new TrieNode[26];
+        }
+    }
+    public static class Trie {
+        TrieNode root;
+        public Trie() { root = new TrieNode(); }
+        public void insert(String str, int index) {
+            TrieNode node = root;
+            int i = 0, n = str.length();
+            while (i < n) {
+                if (isPalindrome(str, i, n - 1)) {
+                    node.palindromeList.add(index);
+                }
+                int ch = str.charAt(i) - 'a';
+                if (node.children[ch] == null) {
+                    node.children[ch] = new TrieNode();
+                }
+                node = node.children[ch];
+            }
+            node.index = index;
+        }
+        public void find(String str, int index, List<List<Integer>> result) {
+            TrieNode node = root;
+            int n = str.length(), i = n - 1;
+            for (; i >= 0; i--) {
+                if (node.index != -1 && isPalindrome(str, 0, i)) {
+                    result.add(Arrays.asList(node.index, index));
+                }
+                int ch = str.charAt(i) - 'a';
+                if (node.children[ch] == null) return;
+                node = node.children[ch];
+            }
+            if (node.palindromeList != null) {
+                for (Integer k : node.palindromeList) {
+                    result.add(Arrays.asList(k, index));
+                }
+            }
+            if (node.index != -1 && node.index != index) {
+                result.add(Arrays.asList(node.index, index));
+            }
+         }
+        public boolean isPalindrome(String s, int l, int r) {
+            while (l < r && s.charAt(l) == s.charAt(r)) {
+                l++;
+                r++;
+            }
+            return l >= r;
+        }
     }
 }
