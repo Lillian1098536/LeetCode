@@ -1,5 +1,8 @@
 package edu.university.leetcode.string.hard;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -29,6 +32,7 @@ import java.util.PriorityQueue;
  * At most 5 * 104 calls will be made to addNum and findMedian.
  */
 public class P295_FindMedianFromDataStream {
+    private static final Logger LOG = LoggerFactory.getLogger(P295_FindMedianFromDataStream.class);
     static class MedianFinder {
         PriorityQueue<Integer> minHeap;
         PriorityQueue<Integer> maxHeap;
@@ -44,6 +48,7 @@ public class P295_FindMedianFromDataStream {
             if (minHeap.size() < maxHeap.size()) {
                 minHeap.offer(maxHeap.poll());
             }
+            LOG.info("add={} minHeap={} maxHeap={}", num, minHeap, maxHeap);
         }
 
         public double findMedian() {
@@ -53,6 +58,7 @@ public class P295_FindMedianFromDataStream {
                 return (minHeap.peek() + maxHeap.peek()) / 2.0;
             }
         }
+
     }
 
     public static void main(String[] args) {
@@ -61,6 +67,9 @@ public class P295_FindMedianFromDataStream {
         test.addNum(2);
         System.out.println("Median " + test.findMedian());
         test.addNum(3);
+        System.out.println("Median " + test.findMedian());
+        test.addNum(4);
+        test.addNum(5);
         System.out.println("Median " + test.findMedian());
     }
 }
