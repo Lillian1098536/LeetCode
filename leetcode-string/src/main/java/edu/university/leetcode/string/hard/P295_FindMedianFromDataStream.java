@@ -75,6 +75,5 @@ public class P295_FindMedianFromDataStream {
         System.out.println("Median " + test.findMedian());
         test.addNum(7);
         test.addNum(8);
-
     }
 }
