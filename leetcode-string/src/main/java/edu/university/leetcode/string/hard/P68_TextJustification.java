@@ -1,5 +1,8 @@
 package edu.university.leetcode.string.hard;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,21 +53,26 @@ import java.util.List;
  * words[i].length <= maxWidth
  */
 public class P68_TextJustification {
+    private static final Logger LOG = LoggerFactory.getLogger(P68_TextJustification.class);
     public List<String> fullJustify(String[] words, int maxWidth) {
         List<String> result = new ArrayList<>();
+        if (words == null || words.length == 0) return result;
         int n = words.length, j = 0;
         int[] ps = new int[n];
+        ps[0] = words[0].length();
         for (int i = 1; i < n; i++) {
             ps[i] = ps[i - 1] + words[i].length();
         }
+        LOG.info("n={} ps={}", n, ps);
         while (j < n) {
             int k = binarySearch(ps, j, maxWidth);
             int totalSpaces = maxWidth - (ps[k] - (j > 0 ? ps[j - 1] : 0));
             int wordCnt = k - j + 1;
+            LOG.info("j={} k={} totalSpaces={} wordCnt={}", j, k, totalSpaces, wordCnt);
             StringBuilder sb = new StringBuilder();
             if (k == n - 1) {
                 addWordsWithSpace(sb, words, j, k, 1);
-                addNSpaces(sb, totalSpaces - k + j);
+                addNSpaces(sb, totalSpaces - (k - j));
             } else if (wordCnt <= 2) {
                 sb.append(words[j]);
                 addNSpaces(sb, totalSpaces);
@@ -74,6 +82,7 @@ public class P68_TextJustification {
             } else {
                 int spaceCnt = totalSpaces / (wordCnt - 1);
                 int extra = totalSpaces % (wordCnt - 1);
+                LOG.info("spaceCnt={} extra={}", spaceCnt, extra);
                 addWordsWithSpace(sb, words, j, j + extra, spaceCnt + 1);
                 addNSpaces(sb, spaceCnt);
                 addWordsWithSpace(sb, words, j + extra + 1, k, spaceCnt);
@@ -110,8 +119,10 @@ public class P68_TextJustification {
             }
         }
         if (ps[r] - (start > 0 ? ps[start - 1] : 0) + r - start <= target) {
+            LOG.info("binarySearch get k -> r={}", r);
             return r;
         }
+        LOG.info("binarySearch get k -> l={}", l);
         return l;
     }
 
