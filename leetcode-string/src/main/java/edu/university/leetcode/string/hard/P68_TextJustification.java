@@ -133,5 +133,10 @@ public class P68_TextJustification {
                 .replaceAll("\\[", "[\n")
                 .replaceAll("]", "\n]")
                 .replaceAll(",", ",\n"));
+        String[] words1 = new String[]{"What", "must", "be", "acknowledgment", "shall", "be"};
+        System.out.println(test.fullJustify(words1, 16).toString()
+                .replaceAll("\\[", "[\n")
+                .replaceAll("]", "\n]")
+                .replaceAll(",", ",\n"));
     }
 }
