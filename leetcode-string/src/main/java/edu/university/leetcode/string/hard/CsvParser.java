@@ -8,9 +8,7 @@ import java.util.List;
  * Parse an escaped string into csvformat
  * Input: csvformat
  * IP Range to CIDR
- * John,Smith,john.smith@gmail.com,Los Angeles,1
- * Jane,Roberts,janer@msn.com,"San Francisco, CA",0
- * "Alexandra ""Alex""",Menendez,alex.menendez@gmail.com,Miami,1 """Alexandra Alex"""
+ * John,Smith,john.smith@gmail.com,Los Angeles,1 Jane,Roberts,janer@msn.com,"San Francisco, CA",0 "Alexandra ""Alex""",Menendez,alex.menendez@gmail.com,Miami,1 """Alexandra Alex"""
  * Output: escaped string
  * John|Smith|john.smith@gmail.com|Los Angeles|1 Jane|Roberts|janer@msn.com|San Francisco, CA|0
  * Alexandra "Alex"|Menendez|alex.menendez@gmail.com|Miami|1 "Alexandra Alex"
