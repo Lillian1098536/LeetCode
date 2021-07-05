@@ -28,4 +28,10 @@ public class P509_FibonacciNumber {
         return fib[N];
     }
 
+    public int finonacci(int n) {
+        if (n < 1) return 0;
+        else if (n < 2) return 1;
+        return finonacci(n - 1) + finonacci(n - 2);
+    }
+
 }
