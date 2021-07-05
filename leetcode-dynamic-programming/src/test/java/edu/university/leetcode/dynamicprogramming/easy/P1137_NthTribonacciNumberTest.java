@@ -10,6 +10,7 @@ public class P1137_NthTribonacciNumberTest {
     public void tribonacci() {
         assertEquals(2, test.tribonacci(3));
         assertEquals(4, test.tribonacci(4));
+        assertEquals(755476, test.tribonacci(24));
         assertEquals(1389537, test.tribonacci(25));
     }
 }
