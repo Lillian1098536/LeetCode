@@ -27,7 +27,7 @@ import java.util.List;
  */
 public class P1524_NumberOfSubArraysWithOddSum {
     public static Logger LOG = LoggerFactory.getLogger(P1524_NumberOfSubArraysWithOddSum.class);
-    public int numOfSubarrays(int[] arr) {
+    public int numOfSubarrays1(int[] arr) {
         int dp = arr[0] % 2 == 0 ? 0 : 1, result = dp;
         for (int i = 1; i < arr.length; i++) {
             boolean odd = arr[i] % 2 == 1;
@@ -36,20 +36,24 @@ public class P1524_NumberOfSubArraysWithOddSum {
         }
         return result;
     }
-    public int numOfSubarrays2(int[] arr) {
-        int curSum = 0;
-        long subOddSum = 0, even = 1, odd = 0;
+
+    /**
+     * odd + even = odd
+     */
+    public int numOfSubarrays(int[] arr) {
+        int sum = 0, mod = 1000000007;
+        long oddSum = 0, even = 1, odd = 0;
         for (int i = 0; i < arr.length; i++) {
-            curSum = (curSum + arr[i]) % 2;
-            if (curSum % 2 == 0) {
-                subOddSum = (subOddSum + odd) % 1000000007;
+            sum +=  arr[i];
+            if (sum % 2 == 0) { //even
+                oddSum = (oddSum + odd) % mod;
                 even++;
-            } else {
-                subOddSum = (subOddSum + even) % 1000000007;
+            } else { //odd
+                oddSum = (oddSum + even) % mod;
                 odd++;
             }
         }
-        return (int)subOddSum;
+        return (int)oddSum;
     }
     public int numOfSubarrays3(int[] arr) {
         int oddSum = 0, len = arr.length;
