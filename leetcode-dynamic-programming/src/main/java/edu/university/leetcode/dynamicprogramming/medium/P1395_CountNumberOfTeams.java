@@ -26,7 +26,6 @@ public class P1395_CountNumberOfTeams {
     public int numTeams(int[] rating) {
         int count = 0, len = rating.length;
         int[] ascDp = new int[len], descDp = new int[len];
-        // rating = [2,5,3,4,1]
         for (int j = 0; j < len; j++) {
             for (int i = 0; i < j; i++) {
                 // rating[i] < rating[j] < rating[k]
