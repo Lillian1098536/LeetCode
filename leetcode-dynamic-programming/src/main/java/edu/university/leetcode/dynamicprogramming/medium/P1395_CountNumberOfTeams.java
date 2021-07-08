@@ -25,20 +25,21 @@ public class P1395_CountNumberOfTeams {
     private static final Logger LOG = LoggerFactory.getLogger(P1395_CountNumberOfTeams.class);
     public int numTeams(int[] rating) {
         int count = 0, len = rating.length;
-        int[] descDp = new int[len], ascDp = new int[len];
+        int[] ascDp = new int[len], descDp = new int[len];
+        // rating = [2,5,3,4,1]
         for (int i = 0; i < len; i++) {
             for (int j = 0; j < i; j++) {
-                // rating[i] > rating[j] > rating[k]
+                // rating[i] < rating[j] < rating[k]
                 if (rating[i] > rating[j]) {
+                    ascDp[i]++;
+                    count += ascDp[j];
+                    LOG.info("i={} count={} j={} ascDp={}", i, count, j, ascDp);
+                }
+                // rating[i] > rating[j] > rating[k]
+                if (rating[i] < rating[j]) {
                     descDp[i]++;
                     count += descDp[j];
                     LOG.info("i={} count={}                           j={} descDp={}", i, count, j, descDp);
-                }
-                // rating[i] < rating[j] < rating[k]
-                if (rating[i] < rating[j]) {
-                    ascDp[i]++;
-                    count += ascDp[j];
-                    LOG.info("i={} count={} j={}  ascDp={}", i, count, j, ascDp);
                 }
             }
         }
