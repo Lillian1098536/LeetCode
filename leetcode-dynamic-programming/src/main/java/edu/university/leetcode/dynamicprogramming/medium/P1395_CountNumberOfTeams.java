@@ -1,5 +1,8 @@
 package edu.university.leetcode.dynamicprogramming.medium;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * 1395. Count Number of Teams
  * There are n soldiers standing in a line. Each soldier is assigned a unique rating value.
@@ -19,8 +22,26 @@ package edu.university.leetcode.dynamicprogramming.medium;
  * All the integers in rating are unique.
  */
 public class P1395_CountNumberOfTeams {
+    private static final Logger LOG = LoggerFactory.getLogger(P1395_CountNumberOfTeams.class);
     public int numTeams(int[] rating) {
-        return -1;
+        int count = 0, len = rating.length;
+        int[] descDp = new int[len], ascDp = new int[len];
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < i; j++) {
+                // rating[i] > rating[j] > rating[k]
+                if (rating[i] > rating[j]) {
+                    descDp[i]++;
+                    count += descDp[j];
+                    LOG.info("i={} count={}                           j={} descDp={}", i, count, j, descDp);
+                }
+                // rating[i] < rating[j] < rating[k]
+                if (rating[i] < rating[j]) {
+                    ascDp[i]++;
+                    count += ascDp[j];
+                    LOG.info("i={} count={} j={}  ascDp={}", i, count, j, ascDp);
+                }
+            }
+        }
+        return count;
     }
-
 }
