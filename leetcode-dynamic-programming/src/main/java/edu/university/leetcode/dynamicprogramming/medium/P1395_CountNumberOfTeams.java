@@ -27,19 +27,19 @@ public class P1395_CountNumberOfTeams {
         int count = 0, len = rating.length;
         int[] ascDp = new int[len], descDp = new int[len];
         // rating = [2,5,3,4,1]
-        for (int i = 0; i < len; i++) {
-            for (int j = 0; j < i; j++) {
+        for (int j = 0; j < len; j++) {
+            for (int i = 0; i < j; i++) {
                 // rating[i] < rating[j] < rating[k]
-                if (rating[i] > rating[j]) {
-                    ascDp[i]++;
-                    count += ascDp[j];
-                    LOG.info("i={} count={} j={} ascDp={}", i, count, j, ascDp);
+                if (rating[i] < rating[j] ) {
+                    ascDp[j]++;
+                    count += ascDp[i];
+                    LOG.info("j={} count={} i={} ascDp={}", j, count, i, ascDp);
                 }
                 // rating[i] > rating[j] > rating[k]
-                if (rating[i] < rating[j]) {
-                    descDp[i]++;
-                    count += descDp[j];
-                    LOG.info("i={} count={}                           j={} descDp={}", i, count, j, descDp);
+                if (rating[i] > rating[j]) {
+                    descDp[j]++;
+                    count += descDp[i];
+                    LOG.info("j={} count={}                           i={} descDp={}", j, count, i, descDp);
                 }
             }
         }
