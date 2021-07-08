@@ -24,6 +24,7 @@ import org.slf4j.LoggerFactory;
 public class P1395_CountNumberOfTeams {
     private static final Logger LOG = LoggerFactory.getLogger(P1395_CountNumberOfTeams.class);
     public int numTeams(int[] rating) {
+        LOG.info("rating={}", rating);
         int count = 0, len = rating.length;
         int[] ascDp = new int[len], descDp = new int[len];
         for (int j = 0; j < len; j++) {
