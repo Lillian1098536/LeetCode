@@ -21,8 +21,11 @@ public class P189_RotateArray {
         int length = nums.length;
         k %= length;
         rotate(nums, 0, length - 1);
+        LOG.info("nums={}", nums);
         rotate(nums, 0, k - 1);
+        LOG.info("nums={}", nums);
         rotate(nums, k, length - 1);
+        LOG.info("nums={}", nums);
     }
 
     private void rotate(int[] nums, int start, int end) {
@@ -61,6 +64,8 @@ public class P189_RotateArray {
     public static void main(String[] args) {
         int[] nums = new int[]{1, 2, 3, 4, 5, 6, 7};
         rotateArray(nums, 3);
+        P189_RotateArray test = new P189_RotateArray();
+        test.rotate(new int[]{1, 2, 3, 4, 5, 6, 7}, 3);
     }
 
 }
