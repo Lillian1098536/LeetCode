@@ -16,6 +16,12 @@ import org.slf4j.LoggerFactory;
 
 public class P26_RemoveDuplicatesFromSortedArray {
     private final static Logger LOG = LoggerFactory.getLogger(P26_RemoveDuplicatesFromSortedArray.class);
+    /**
+     * n = ++i increments a and returns that value
+     * n = 1, i = 1
+     * while n = i++ returns a's value and then increments a
+     * n = 0, i = 1
+     */
     public int removeDuplicates(int[] nums) {
         if (nums.length < 2) {
             return nums.length;
@@ -25,7 +31,7 @@ public class P26_RemoveDuplicatesFromSortedArray {
             if (nums[newLength] != nums[i]) {
                 nums[++newLength] = nums[i];
             }
-            LOG.debug("i={} newLength={} nums={}", i, newLength, nums);
+            LOG.info("i={} newLength={} nums={}", i, newLength, nums);
         }
         return newLength + 1;
     }
