@@ -1,6 +1,8 @@
 package edu.university.leetcode.array.easy;
 
-import lombok.extern.slf4j.Slf4j;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 26. Remove Duplicates from Sorted Array
@@ -11,10 +13,10 @@ import lombok.extern.slf4j.Slf4j;
  * Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.
  * It doesn't matter what you leave beyond the new length.
  */
-@Slf4j
-public class P26_RemoveDuplicatesFromSortedArray {
 
-    public static int removeDuplicates(int[] nums) {
+public class P26_RemoveDuplicatesFromSortedArray {
+    private final static Logger LOG = LoggerFactory.getLogger(P26_RemoveDuplicatesFromSortedArray.class);
+    public int removeDuplicates(int[] nums) {
         if (nums.length < 2) {
             return nums.length;
         }
@@ -23,9 +25,8 @@ public class P26_RemoveDuplicatesFromSortedArray {
             if (nums[newLength] != nums[i]) {
                 nums[++newLength] = nums[i];
             }
-            log.debug("i={} newLength={} nums={}", i, newLength, nums);
+            LOG.debug("i={} newLength={} nums={}", i, newLength, nums);
         }
         return newLength + 1;
     }
-
 }
