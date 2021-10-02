@@ -1,6 +1,7 @@
 package edu.university.leetcode.number.easy;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 69. Sqrt(x)
@@ -10,32 +11,27 @@ import lombok.extern.slf4j.Slf4j;
  * Example 2: Input: 8 Output: 2
  * Explanation: The square root of 8 is 2.82842..., and since we want to return an integer, the decimal part will be truncated.
  */
-@Slf4j
 public class P69_SqrtX {
-
-    public static int mySqrt(int x) {
-        if (x <= 1) {
-            return x;
-        }
-        int start = 1, end = x, mid = 0;
+    private final static Logger LOG = LoggerFactory.getLogger(P69_SqrtX.class);
+    public int mySqrt(int x) {
+        if (x <= 1) { return x; }
+        int start = 1, end = x, mid;
         while (start <= end) {
             mid = start + (end - start) / 2;
-            log.debug("start={} end={} mid={}", start, end, mid);
-            //x / mid == mid will over flow
+            LOG.info("start={} end={} mid={}", start, end, mid);
+            // x / mid == mid will over flow
             if (mid == x / mid) {
                 return mid;
             } else {
                 if (mid < x / mid) {
                     start = mid + 1;
                 } else {
-
-                    end = mid -1;
+                    end = mid - 1;
                 }
             }
-            log.debug("after srart={} end={}", start, end);
+            LOG.info("after start={} end={}", start, end);
         }
-        // when finished, end < begin, so return end
+        // when finished, end < start, so return end
         return end;
     }
-
 }
