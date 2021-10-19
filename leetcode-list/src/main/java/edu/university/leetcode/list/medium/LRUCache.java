@@ -36,23 +36,6 @@ import java.util.Map;
  */
 public class LRUCache {
 
-    class Node {
-        int key;
-        int value;
-        Node prev;
-        Node next;
-
-        public Node(int key, int value) {
-            this.key = key;
-            this.value = value;
-        }
-
-        @Override
-        public String toString() {
-            return "Node{key=" + key + ", value=" + value + '}';
-        }
-    }
-
     final int capacity;
     Map<Integer, Node> lookUp;
     DoubleList list;
@@ -97,19 +80,31 @@ public class LRUCache {
         System.out.println("DoubleLinkedList >>> head=" + list.head.next.toString() + " tail=" + list.tail.toString());
     }
 
-    public class DoubleList {
+    public class Node {
+        int key;
+        int value;
+        Node prev;
+        Node next;
+        public Node(int key, int value) {
+            this.key = key;
+            this.value = value;
+        }
+        @Override
+        public String toString() {
+            return "Node{key=" + key + ", value=" + value + '}';
+        }
+    }
+
+    class DoubleList {
         Node head;
         Node tail;
-
         public DoubleList() {
             this.head = new Node(Integer.MIN_VALUE, -1);
             this.tail = this.head;
         }
-
         public Node getHead() {
             return head.next;
         }
-
         public void addHead(Node node) {
             if (head == tail) {
                 head.next = node;
@@ -123,7 +118,6 @@ public class LRUCache {
                 tmp.prev = node;
             }
         }
-
         public Node removeTail() {
             if (head == tail) {
                 return null;
@@ -134,7 +128,6 @@ public class LRUCache {
             remove.prev = null;
             return remove;
         }
-
         public void remove(Node node) {
             if (node == tail) {
                 removeTail();
