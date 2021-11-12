@@ -1,8 +1,5 @@
 package edu.university.leetcode.string.easy;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * 680. Valid Palindrome II
  * Given a string s, return true if the s can be palindrome after deleting at most one character from it.
@@ -15,7 +12,6 @@ import org.slf4j.LoggerFactory;
  * s consists of lowercase English letters.
  */
 public class P680_ValidPalindromeII {
-    private static final Logger LOG = LoggerFactory.getLogger(P680_ValidPalindromeII.class);
     public boolean validPalindrome(String s) {
         int lo = 0, hi = s.length() - 1;
         while (lo <= hi) {
