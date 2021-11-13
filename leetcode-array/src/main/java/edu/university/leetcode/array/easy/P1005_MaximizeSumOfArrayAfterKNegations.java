@@ -24,6 +24,7 @@ import java.util.Arrays;
  */
 public class P1005_MaximizeSumOfArrayAfterKNegations {
     private static final Logger LOG = LoggerFactory.getLogger(P1005_MaximizeSumOfArrayAfterKNegations.class);
+    //greedy
     public int largestSumAfterKNegations(int[] nums, int k) {
         int min = Integer.MAX_VALUE, result = 0, len = nums.length;
         Arrays.sort(nums);
