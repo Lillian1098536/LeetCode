@@ -15,6 +15,7 @@ import java.util.Arrays;
  * 2.1 <= arr[i] <= 10^3
  */
 public class P1196_HowManyApplesCanYouPutIntoTheBasket {
+    //greedy
     public int maxNumberOfApples(int[] nums) {
         int sum = 0, i = nums.length - 1;
         for (int n : nums) {
