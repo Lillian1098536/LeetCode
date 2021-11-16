@@ -48,6 +48,7 @@ public class P1710_MaximumUnitsOnATruck {
                 return sum + truckSize * boxTypes[i][1];
             }
         }
+        LOG.info("final sum={}", sum);
         return sum;
     }
 }
