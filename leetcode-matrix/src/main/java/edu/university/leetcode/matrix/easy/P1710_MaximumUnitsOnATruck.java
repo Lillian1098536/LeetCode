@@ -29,6 +29,7 @@ import java.util.Arrays;
  */
 public class P1710_MaximumUnitsOnATruck {
     private static final Logger LOG = LoggerFactory.getLogger(P1710_MaximumUnitsOnATruck.class);
+    //greedy
     public int maximumUnits(int[][] boxTypes, int truckSize) {
         Arrays.sort(boxTypes, (o1, o2) -> o2[1] - o1[1]);
         int sum = 0;
