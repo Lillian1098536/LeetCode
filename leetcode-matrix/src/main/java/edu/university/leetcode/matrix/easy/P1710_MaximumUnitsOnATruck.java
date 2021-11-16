@@ -2,7 +2,6 @@ package edu.university.leetcode.matrix.easy;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.util.Arrays;
 
 /**
@@ -42,9 +41,9 @@ public class P1710_MaximumUnitsOnATruck {
             if (truckSize >= boxTypes[i][0]) {
                 sum += boxTypes[i][0] * boxTypes[i][1];
                 truckSize -= boxTypes[i][0];
-                LOG.info("i={} sum = {} * {} = {}", i, boxTypes[i][0],  boxTypes[i][1], sum);
+                LOG.info("i={} sum = {} * {} = {}", i, boxTypes[i][0], boxTypes[i][1], sum);
             } else if (truckSize < boxTypes[i][0] && truckSize > 0) {
-                LOG.info("i={} final = {} * {} = {}", i, truckSize,  boxTypes[i][1], sum + truckSize * boxTypes[i][1]);
+                LOG.info("i={} final = {} * {} = {}", i, truckSize, boxTypes[i][1], sum + truckSize * boxTypes[i][1]);
                 return sum + truckSize * boxTypes[i][1];
             }
         }
