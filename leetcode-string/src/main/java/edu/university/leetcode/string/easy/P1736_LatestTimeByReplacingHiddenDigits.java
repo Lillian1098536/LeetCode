@@ -14,6 +14,7 @@ package edu.university.leetcode.string.easy;
  * It is guaranteed that you can produce a valid time from the given string.
  */
 public class P1736_LatestTimeByReplacingHiddenDigits {
+    //greedy
     public String maximumTime(String time) {
         StringBuilder sb = new StringBuilder();
         if (time.charAt(0) == '?') {
