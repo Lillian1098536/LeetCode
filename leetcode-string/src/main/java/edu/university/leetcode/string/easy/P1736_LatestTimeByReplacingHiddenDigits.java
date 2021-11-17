@@ -18,7 +18,7 @@ public class P1736_LatestTimeByReplacingHiddenDigits {
     public String maximumTime(String time) {
         StringBuilder sb = new StringBuilder();
         if (time.charAt(0) == '?') {
-            if (time.charAt(1) == '?' || time.charAt(1) == '0' || time.charAt(1) == '1' || time.charAt(1) == '2' || time.charAt(1) == '3') {
+            if (time.charAt(1) == '?' || (time.charAt(1) - '0') < 4) {
                 sb.append("2");
             } else {
                 sb.append("1");
