@@ -1,5 +1,8 @@
 package edu.university.leetcode.number.hard;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * 330. Patching Array
  * Given a sorted positive integer array nums and an integer n, add/patch elements to the array such that any number in range
@@ -17,19 +20,18 @@ package edu.university.leetcode.number.hard;
  * Output: 0
  */
 public class P330_PatchingArray {
-//    private static final Logger log = LoggerFactory.getLogger(P330_PatchingArray.class);
+    private static final Logger LOG = LoggerFactory.getLogger(P330_PatchingArray.class);
     public int minPatches(int[] nums, int n) {
-        int miss = 1, count = 0, i = 0;
+        long miss = 1;
+        int count = 0, i = 0;
         while (miss <= n) {
-            System.out.println("miss = " + miss + " i = " + i);
             if (i < nums.length && nums[i] <= miss) {
-                System.out.println("nums[" + i + "] = " + nums[i]);
                 miss += nums[i++];
-                System.out.println("            ==> miss = " + miss + " i = " + i);
+                LOG.info("i={} nums[i]={} miss={}", i, nums[i - 1], miss);
             } else {
                 miss += miss;
                 count++;
-                System.out.println("else            ==> miss = " + miss + " count = " + count);
+                LOG.info("else i={} miss={} count={}", i, miss, count);
             }
         }
         return count;
