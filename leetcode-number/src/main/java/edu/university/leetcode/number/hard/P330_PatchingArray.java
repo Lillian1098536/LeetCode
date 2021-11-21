@@ -29,11 +29,12 @@ public class P330_PatchingArray {
                 miss += nums[i++];
                 LOG.info("i={} nums[i]={} miss={}", i, nums[i - 1], miss);
             } else {
+                LOG.info("else i={} miss={} count={}", i, miss, count + 1);
                 miss += miss;
                 count++;
-                LOG.info("else i={} miss={} count={}", i, miss, count);
             }
         }
+        LOG.info("final miss={} count={}", miss, count);
         return count;
     }
 }
