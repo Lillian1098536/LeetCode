@@ -33,7 +33,7 @@ public class P179_LargestNumber {
             String order2 = sb2.append(b).append(a).toString();
             return order2.compareTo(order1);
         });
-        if ("0".equals(list.get(len - 1))) {
+        if ("0".equals(list.get(0))) {
             return "0";
         }
         StringBuilder sb = new StringBuilder();

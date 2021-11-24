@@ -12,5 +12,6 @@ public class P179_LargestNumberTest {
         assertTrue("9534330".equals(test.largestNumber(new int[]{3, 30, 34, 5, 9})));
         assertTrue("1".equals(test.largestNumber(new int[]{1})));
         assertTrue("10".equals(test.largestNumber(new int[]{10})));
+        assertTrue("9876543210".equals(test.largestNumber(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0})));
     }
 }
