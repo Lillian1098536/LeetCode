@@ -18,7 +18,7 @@ import java.util.Stack;
  */
 public class P316_RemoveDuplicateLetters {
     private static final Logger LOG = LoggerFactory.getLogger(P316_RemoveDuplicateLetters.class);
-    public String removeDuplicateLetters(String s) {
+    public String removeDuplicateLettersStack(String s) {
         int[] record = new int[26];
         boolean[] added = new boolean[26];
         char[] arr = s.toCharArray();
@@ -50,5 +50,28 @@ public class P316_RemoveDuplicateLetters {
             sb.insert(0, stack.pop());
         }
         return sb.toString();
+    }
+
+    public String removeDuplicateLetters(String s) {
+        char[] result = new char[s.length()], ch = s.toCharArray();
+        int top = 0;
+        int[] dic = new int[26];
+        boolean[] visit = new boolean[26];
+        for (char c : ch) {
+            dic[c - 'a']++;
+        }
+        for (int i = 0; i < s.length(); i++) {
+            dic[ch[i] - 'a']--;
+            if (visit[ch[i] - 'a']) {
+                continue;
+            }
+            while (top > 0 && ch[i] < result[top - 1] && dic[result[top - 1]- 'a'] > 0) {
+                visit[result[--top] - 'a'] = false;
+            }
+            result[top++] = ch[i];
+            visit[ch[i] - 'a'] = true;
+            LOG.info("i={} top={}", i, top);
+        }
+        return String.copyValueOf(result, 0, top);
     }
 }
