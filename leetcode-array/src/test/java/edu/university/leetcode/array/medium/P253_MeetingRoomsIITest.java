@@ -14,5 +14,15 @@ public class P253_MeetingRoomsIITest {
         Interval i3 = new Interval(15, 20);
         Interval[] intervals = new Interval[] {i1, i2, i3};
         assertEquals(2, test.minMeetingRooms(intervals));
+        assertEquals(2, test.minMeetingRoomsQueue(intervals));
+    }
+
+    @Test
+    public void minMeetingRoomsArray() {
+        Interval i1 = new Interval(0, 30);
+        Interval i2 = new Interval(5, 10);
+        Interval i3 = new Interval(15, 20);
+        Interval[] intervals = new Interval[] {i1, i2, i3};
+        assertEquals(2, test.minMeetingRoomsArray(intervals));
     }
 }

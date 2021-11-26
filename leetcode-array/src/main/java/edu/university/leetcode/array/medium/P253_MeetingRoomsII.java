@@ -3,7 +3,6 @@ package edu.university.leetcode.array.medium;
 import edu.university.leetcode.array.medium.P56_MergeIntervals.Interval;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
@@ -16,12 +15,7 @@ import java.util.PriorityQueue;
 public class P253_MeetingRoomsII {
     public int minMeetingRooms(Interval[] intervals) {
         if (intervals == null || intervals.length == 0) return 0;
-        Arrays.sort(intervals, new Comparator<Interval>() {
-            @Override
-            public int compare(Interval o1, Interval o2) {
-                return o1.start - o2.start;
-            }
-        });
+        Arrays.sort(intervals, (o1, o2) -> o1.start - o2.start);
         PriorityQueue<Integer> queue = new PriorityQueue<>();
         int minRoom = 1;
         queue.offer(intervals[0].end);
@@ -35,4 +29,46 @@ public class P253_MeetingRoomsII {
         }
         return minRoom;
     }
+
+    public int minMeetingRoomsQueue(Interval[] intervals) {
+        Arrays.sort(intervals, (o1, o2) -> o1.start - o2.start);
+        PriorityQueue<Interval> pq = new PriorityQueue<>((o1, o2) -> o1.end - o2.end);
+        for (Interval interval : intervals) {
+            Interval tmp = pq.poll();
+            if (tmp == null || interval.start < tmp.end) {
+                pq.offer(interval);
+                if (tmp == null) {
+                    continue;
+                }
+            } else {
+                tmp.end = interval.end;
+            }
+            pq.offer(tmp);
+        }
+        return pq.size();
+    }
+
+    /**
+     * sorted by start time and end time into 2 arrays
+     * use the pointer to maintain the minimum value of the next end time as a simulation of poll() in PriorityQueue
+     */
+    public int minMeetingRoomsArray(Interval[] intervals) {
+        int room = 0, pt = 0, len = intervals.length;
+        int[] start = new int[len], end = new int[len];
+        for (int i = 0; i < len; i++) {
+            start[i] = intervals[i].start;
+            end[i] = intervals[i].end;
+        }
+        Arrays.sort(start);
+        Arrays.sort(end);
+        for (int i = 0; i < len; i++) {
+            if (start[i] < end[pt]) {
+                room++;
+            } else {
+                pt++;
+            }
+        }
+        return room;
+    }
+
 }
