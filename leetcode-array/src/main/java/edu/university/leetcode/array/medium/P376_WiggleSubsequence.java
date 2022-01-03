@@ -22,6 +22,7 @@ package edu.university.leetcode.array.medium;
  * Follow up: Could you solve this in O(n) time?
  */
 public class P376_WiggleSubsequence {
+    //greedy
     public int wiggleMaxLength(int[] nums) {
         int up = 1, down = 1;
         for (int i = 1; i < nums.length; i++) {
