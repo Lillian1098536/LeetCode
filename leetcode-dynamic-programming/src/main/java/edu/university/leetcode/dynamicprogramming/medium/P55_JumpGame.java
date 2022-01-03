@@ -23,4 +23,20 @@ public class P55_JumpGame {
         return reach >= nums.length - 1 ? true : false;
     }
 
+    public boolean canJumpGreedy(int[] nums) {
+        if (nums == null) return false;
+        //前n-1个元素能够跳到的最远距离
+        int reach = 0;
+        for (int i = 0; i <= reach; i++) {
+                                    //第i个元素能够跳到的最远距离
+            reach = Math.max(reach, i + nums[i]);
+            //如果最远距离已经大于或等于最后一个元素的下标,则说明能跳过去
+            if (reach >= nums.length - 1) {
+                return true; //退出, 减少循环
+            }
+        }
+        //最远距离k不再改变,且没有到末尾元素
+        return false;
+    }
+
 }
