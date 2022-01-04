@@ -8,6 +8,7 @@ public class P45_JumpGameIITest {
     P45_JumpGameII test = new P45_JumpGameII();
     @Test
     public void jump() {
-        assertEquals(2, test.jump(new int[]{2, 3, 1, 1, 4}));
+//        assertEquals(2, test.jump(new int[]{2, 3, 1, 1, 4}));
+        assertEquals(2, test.jumpII(new int[]{2, 3, 1, 1, 4}));
     }
 }

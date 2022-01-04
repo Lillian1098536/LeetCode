@@ -1,5 +1,8 @@
 package edu.university.leetcode.dynamicprogramming.hard;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * 45. Jump Game II
  * Given an array of non-negative integers nums, you are initially positioned at the first index of the array.
@@ -14,7 +17,7 @@ package edu.university.leetcode.dynamicprogramming.hard;
  * 0 <= nums[i] <= 105
  */
 public class P45_JumpGameII {
-
+    private final static Logger LOG = LoggerFactory.getLogger(P45_JumpGameII.class);
     /**
      * time complex O(n) space complex O(1)
      */
@@ -22,19 +25,34 @@ public class P45_JumpGameII {
         int step = 0, left = 0, right = 0;
         if (nums.length == 1) return 0;
         while (left <= right) {
-            System.out.println("step = " + step);
-            System.out.println("left = " + left);
-            System.out.println("right(ordRight) = " + right);
+            LOG.info("step = " + step);
+            LOG.info("left = " + left);
+            LOG.info("right(ordRight) = " + right);
             step++;
             final int ordRight = right;
             for (int i = left; i <= ordRight; i++) {
                 int newRight = i + nums[i];
-                System.out.println("i = " + i + " newRight = " + newRight);
+                LOG.info("i = " + i + " newRight = " + newRight);
                 if (newRight >= nums.length - 1) return step;
                 if (newRight > right) right = newRight;
             }
             left = ordRight + 1;
         }
         return 0;
+    }
+    //greedy
+    public int jumpII(int[] nums) {
+        int step = 0, end = 0, max = 0;
+        for (int i = 0; i < nums.length - 1; i++) {
+            //能跳到最远的距离
+            max = Math.max(max, i + nums[i]);
+            //当前跳跃步数的边界
+            if (i == end) {
+                end = max; //并记录当前跳跃步数能到的最远位置
+                step++; //再跳一次
+                LOG.info("i={} reach the current max={} step={}", i, max, step);
+            }
+        }
+        return step;
     }
 }
