@@ -47,8 +47,7 @@
         <version.junit>4.13.1</version.junit>
         <version.logback>1.2.3</version.logback>
     </properties>
-
-
+    
     <dependencies>
         <dependency>
             <groupId>org.apache.commons</groupId>
