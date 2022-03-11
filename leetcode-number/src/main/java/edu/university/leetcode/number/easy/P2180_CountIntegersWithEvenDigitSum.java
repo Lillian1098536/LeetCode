@@ -34,4 +34,20 @@ public class P2180_CountIntegersWithEvenDigitSum {
         LOG.info("num={} sum={} count={}", num, sum, (num - (sum & 1)) / 2);
         return (num - (sum & 1)) / 2;
     }
+
+    public int countEvenChar(int num) {
+        int result = 0;
+        for (int i = 1; i <= num; i++) {
+            int sum = 0;
+            for (char c : String.valueOf(i).toCharArray()) {
+                sum += (c - '0');
+                LOG.info("c={} sum={}", c - '0', sum);
+            }
+            if (sum % 2 == 0) {
+                result++;
+                LOG.info("sum={} result={}", sum,  result);
+            }
+        }
+        return result;
+    }
 }
