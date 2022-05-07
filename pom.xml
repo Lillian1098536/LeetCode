@@ -41,6 +41,7 @@
         <version.java>11</version.java>
         <version.maven.plugin.compiler>3.8.1</version.maven.plugin.compiler>
         <version.apache.commons>3.0</version.apache.commons>
+        <version.log4j>2.17.2</version.log4j>
         <version.slf4j>1.7.32</version.slf4j>
         <version.lombok>1.18.8</version.lombok>
         <version.javafx>11.0.2</version.javafx>
@@ -53,6 +54,16 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${version.apache.commons}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${version.log4j}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${version.log4j}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -75,6 +86,12 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${version.junit}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${version.log4j}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
