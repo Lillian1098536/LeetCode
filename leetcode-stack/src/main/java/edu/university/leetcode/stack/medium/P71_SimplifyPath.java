@@ -1,5 +1,8 @@
 package edu.university.leetcode.stack.medium;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 
@@ -29,6 +32,8 @@ import java.util.Deque;
  * path is a valid absolute Unix path.
  */
 public class P71_SimplifyPath {
+    private static final Logger LOG = LogManager.getLogger(P71_SimplifyPath.class);
+
     public String simplifyPath(String path) {
         Deque<String> deque = new ArrayDeque<>();
         int n = path.length();
@@ -50,6 +55,7 @@ public class P71_SimplifyPath {
             }
             i = j;
         }
+        LOG.info("deque={}", deque);
         StringBuilder sb = new StringBuilder();
         while (!deque.isEmpty()) {
             sb.append("/" + deque.pollFirst());
