@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,12 +34,7 @@ public class P347_TopKFrequentElements {
            }
         }
         List<Map.Entry<Integer, Integer>> list = new ArrayList<>(map.entrySet());
-        Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
-            @Override
-            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
-                return o2.getValue() - o1.getValue();
-            }
-        });
+        Collections.sort(list, (o1, o2) -> o2.getValue() - o1.getValue());
         for (int i = 0; i < k; i++) {
             result.add(list.get(i).getKey());
         }
