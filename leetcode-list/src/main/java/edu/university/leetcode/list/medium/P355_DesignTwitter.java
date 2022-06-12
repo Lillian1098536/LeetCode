@@ -1,6 +1,7 @@
 package edu.university.leetcode.list.medium;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -24,8 +25,7 @@ import java.util.Set;
  * Example 1: Input ["Twitter", "postTweet", "getNewsFeed", "follow", "postTweet", "getNewsFeed", "unfollow", "getNewsFeed"]
  * [[], [1, 5], [1], [1, 2], [2, 6], [1], [1, 2], [1]]
  * Output: [null, null, [5], null, null, [6, 5], null, [5]]
- * Explanation
- * Twitter twitter = new Twitter();
+ * Explanation: Twitter twitter = new Twitter();
  * twitter.postTweet(1, 5); // User 1 posts a new tweet (id = 5).
  * twitter.getNewsFeed(1);  // User 1's news feed should return a list with 1 tweet id -> [5]. return [5]
  * twitter.follow(1, 2);    // User 1 follows user 2.
@@ -60,7 +60,7 @@ public class P355_DesignTwitter {
     }
 
     public List<Integer> getNewsFeed(int userId) {
-        PriorityQueue<Tweet> q = new PriorityQueue<>((o1, o2) -> o1.ts - o2.ts);
+        PriorityQueue<Tweet> q = new PriorityQueue<>(Comparator.comparingInt(o -> o.ts));
         Set<Integer> followeeIds = follows.get(userId);
         if (followeeIds != null && followeeIds.size() > 0) {
             for (Integer followeeId : followeeIds) {
