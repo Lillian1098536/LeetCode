@@ -13,6 +13,7 @@ package edu.university.leetcode.hashtable.easy;
  * All the characters of jewels are unique.
  */
 public class P771_JewelsAndStones {
+    //hash-table String
     public int numJewelsInStones(String jewels, String stones) {
         int num = 0;
         for (Character c : stones.toCharArray()) {
