@@ -1,5 +1,7 @@
 package edu.university.leetcode.hashtable.easy;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -30,6 +32,8 @@ import java.util.Set;
  * words[i] consists of lowercase English letters.
  */
 public class P804_UniqueMorseCodeWords {
+    private static final Logger LOG = LogManager.getLogger(P804_UniqueMorseCodeWords.class);
+
     //hash-table String
     public int uniqueMorseRepresentations(String[] words) {
         final String[] morse = new String[]{".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."};
@@ -41,13 +45,7 @@ public class P804_UniqueMorseCodeWords {
             }
             transformations.add(sb.toString());
         }
-        System.out.println(transformations);
+        LOG.info(transformations);
         return transformations.size();
-    }
-
-    public static void main(String[] args) {
-        P804_UniqueMorseCodeWords test = new P804_UniqueMorseCodeWords();
-        System.out.println(test.uniqueMorseRepresentations(new String[]{"gin", "zen", "gig", "msg"}));
-        System.out.println(test.uniqueMorseRepresentations(new String[]{"q"}));
     }
 }
