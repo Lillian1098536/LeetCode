@@ -19,6 +19,9 @@ import java.util.Map;
  * - Rectangle 0 with rectangle 2: 4/8 == 10/20.
  * - Rectangle 0 with rectangle 3: 4/8 == 15/30.
  * - Rectangle 1 with rectangle 2: 3/6 == 10/20.
+ *
+ *
+ *
  * - Rectangle 1 with rectangle 3: 3/6 == 15/30.
  * - Rectangle 2 with rectangle 3: 10/20 == 15/30.
  * Example 2: Input: rectangles = [[4,5],[7,8]] Output: 0
