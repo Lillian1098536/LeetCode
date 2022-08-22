@@ -14,6 +14,7 @@ package edu.university.leetcode.dynamicprogramming.medium;
  * s consists of lowercase English letters.
  */
 public class P647_PalindromicSubstrings {
+    //dynamic program
     public int countSubstrings(String s) {
         int result = 0, len = s.length();
         boolean[][] dp = new boolean[len][len];
