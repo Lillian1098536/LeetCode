@@ -15,11 +15,11 @@ package edu.university.leetcode.dynamicprogramming.medium;
  */
 public class P647_PalindromicSubstrings {
     public int countSubstrings(String s) {
-        int result = 0;
-        boolean[][] dp = new boolean[s.length()][s.length()];
-        for (int j = 0; j < s.length(); j++) {
+        int result = 0, len = s.length();
+        boolean[][] dp = new boolean[len][len];
+        for (int j = 0; j < len; j++) {
             for (int i = 0; i <= j; i++) {
-                if (s.charAt(j) == s.charAt(i) || (j - i < 2 && dp[i + 1][j - 1])) {
+                if (s.charAt(j) == s.charAt(i) && (j - i < 2 || dp[i + 1][j - 1])) {
                     dp[i][j] = true;
                     result++;
                 }

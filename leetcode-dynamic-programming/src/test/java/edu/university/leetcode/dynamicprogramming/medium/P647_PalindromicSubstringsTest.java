@@ -10,5 +10,6 @@ public class P647_PalindromicSubstringsTest {
     public void countSubstrings() {
         assertEquals(3, test.countSubstrings("abc"));
         assertEquals(6, test.countSubstrings("aaa"));
+        assertEquals(21, test.countSubstrings("aaabbbcccabc"));
     }
 }
