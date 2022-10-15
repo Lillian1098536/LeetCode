@@ -73,9 +73,9 @@ public class P2012_SumOfBeautyInTheArray {
 
     public static void main(String[] args) {
         P2012_SumOfBeautyInTheArray test = new P2012_SumOfBeautyInTheArray();
-        System.out.println("2 >>> " + test.sumOfBeauty(new int[]{1, 2, 3}));
-        System.out.println("1 >>> " + test.sumOfBeauty(new int[]{2, 4, 6, 4}));
-        System.out.println("0 >>> " + test.sumOfBeauty(new int[]{3, 2, 1}));
-        System.out.println("5 >>> " + test.sumOfBeauty(new int[]{1, 2, 6, 4, 5, 7, 8}));
+        System.out.println("2 >>> " + test.sumOfBeauty(new int[]{1, 2, 3}) + " >>> " + test.sumOfBeauties(new int[]{1, 2, 3}));
+        System.out.println("1 >>> " + test.sumOfBeauty(new int[]{2, 4, 6, 4}) + " >>> " + test.sumOfBeauties(new int[]{2, 4, 6, 4}));
+        System.out.println("0 >>> " + test.sumOfBeauty(new int[]{3, 2, 1}) + " >>> " + test.sumOfBeauties(new int[]{3, 2, 1}));
+        System.out.println("5 >>> " + test.sumOfBeauty(new int[]{1, 2, 6, 4, 5, 7, 8}) + " >>> " + test.sumOfBeauties(new int[]{1, 2, 6, 4, 5, 7, 8}));
     }
 }
