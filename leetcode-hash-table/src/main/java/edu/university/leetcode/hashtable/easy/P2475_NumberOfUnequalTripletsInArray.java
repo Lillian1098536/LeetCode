@@ -38,7 +38,7 @@ public class P2475_NumberOfUnequalTripletsInArray {
         }
         for (int b : map.values()) {
             c -= b;
-            count = a * b * c;
+            count += a * b * c;
             a += b;
         }
         return count;
