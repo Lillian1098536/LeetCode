@@ -1,6 +1,5 @@
 package edu.university.leetcode.dynamicprogramming.medium;
 
-import edu.university.leetcode.dynamicprogramming.easy.P53_MaximumSubarray;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
