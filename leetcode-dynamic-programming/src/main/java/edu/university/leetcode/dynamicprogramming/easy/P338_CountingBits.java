@@ -37,23 +37,14 @@ public class P338_CountingBits {
                 dp[i] = dp[i / 2];
             }
         }
+        LOG.info("dp={}", dp);
         return dp;
-    }
-
-    public String toString(int[] array) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[");
-        for (int a : array) {
-            sb.append(a).append(",");
-        }
-        sb.append("]");
-        return sb.toString().replace(",]", "]");
     }
 
     public static void main(String[] args) {
         P338_CountingBits test = new P338_CountingBits();
-        System.out.println(test.toString(test.countBits(2)));
-        System.out.println(test.toString(test.countBits(5)));
+        test.countBits(2);
+        test.countBits(5);
     }
 
 
