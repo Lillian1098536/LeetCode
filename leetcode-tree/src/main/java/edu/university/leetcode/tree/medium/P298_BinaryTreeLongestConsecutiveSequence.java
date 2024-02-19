@@ -1,9 +1,9 @@
 package edu.university.leetcode.tree.medium;
 
+import edu.university.leetcode.tree.TreeNode;
+
 import java.util.LinkedList;
 import java.util.Queue;
-
-import static edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
 
 /**
  * 298. Binary Tree Longest Consecutive Sequence

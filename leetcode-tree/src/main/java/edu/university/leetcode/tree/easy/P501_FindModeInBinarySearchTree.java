@@ -1,11 +1,11 @@
 package edu.university.leetcode.tree.easy;
 
+import edu.university.leetcode.tree.TreeNode;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
 
 /**
  * 501. Find Mode in Binary Search Tree

@@ -1,11 +1,11 @@
 package edu.university.leetcode.tree.easy;
 
+import edu.university.leetcode.tree.TreeNode;
 import org.junit.Test;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-import static edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
 import static org.junit.Assert.assertTrue;
 
 public class P100_SameTreeTest {
@@ -42,10 +42,11 @@ public class P100_SameTreeTest {
 
     @Test
     public void isSameTree() throws Exception {
+        P100_SameTree test = new P100_SameTree();
         Integer[] a1 = {1, 2, 3}, a2 = {1, 2, 3};
         TreeNode p = getTreeNode(a1);
         TreeNode q = getTreeNode(a2);
-        boolean result = P100_SameTree.isSameTree(p, q);
+        boolean result = test.isSameTree(p, q);
         assertTrue(result);
     }
 

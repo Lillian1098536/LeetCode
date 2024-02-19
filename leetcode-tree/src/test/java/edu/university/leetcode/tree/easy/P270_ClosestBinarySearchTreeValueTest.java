@@ -1,8 +1,8 @@
 package edu.university.leetcode.tree.easy;
 
-import static edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
 import static org.junit.Assert.*;
 
+import edu.university.leetcode.tree.TreeNode;
 import org.junit.Test;
 
 public class P270_ClosestBinarySearchTreeValueTest {

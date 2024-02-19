@@ -1,6 +1,7 @@
 package edu.university.leetcode.tree.easy;
 
-import static edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
+import edu.university.leetcode.tree.TreeNode;
+
 /**
  * 235. Lowest Common Ancestor of a Binary Search Tree
  * Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.

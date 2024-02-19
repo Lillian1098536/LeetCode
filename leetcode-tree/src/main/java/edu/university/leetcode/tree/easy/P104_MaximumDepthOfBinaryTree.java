@@ -1,6 +1,6 @@
 package edu.university.leetcode.tree.easy;
 
-import edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
+import edu.university.leetcode.tree.TreeNode;
 
 /**
  * 104. Maximum Depth of Binary Tree

@@ -1,7 +1,8 @@
 package edu.university.leetcode.tree.easy;
 
+import edu.university.leetcode.tree.TreeNode;
+
 import java.util.Stack;
-import static edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
 
 /**
  * 530. Minimum Absolute Difference in BST

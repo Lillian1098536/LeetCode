@@ -1,5 +1,6 @@
 package edu.university.leetcode.tree.easy;
 
+import edu.university.leetcode.tree.TreeNode;
 /**
  * 100. Same Tree
  * Given two binary trees, write a function to check if they are the same or not.
@@ -7,23 +8,11 @@ package edu.university.leetcode.tree.easy;
  */
 public class P100_SameTree {
 
-    public static boolean isSameTree(TreeNode p, TreeNode q) {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == null || q == null) {
             return p == null && q == null;
         }
         return p.val == q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
-    }
-
-    public static class TreeNode {
-
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-
-        public TreeNode(int x) {
-            this.val = x;
-        }
-
     }
 
 }

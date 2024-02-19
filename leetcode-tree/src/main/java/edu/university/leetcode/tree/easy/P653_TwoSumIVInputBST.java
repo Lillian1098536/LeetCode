@@ -1,9 +1,10 @@
 package edu.university.leetcode.tree.easy;
 
+import edu.university.leetcode.tree.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import static edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
 /**
  * 653. Two Sum IV - Input is a BST
  * Given a Binary Search Tree and a target number, return true if there exist two elements in the BST such that their sum is equal to the given target.

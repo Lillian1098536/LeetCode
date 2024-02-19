@@ -1,7 +1,6 @@
 package edu.university.leetcode.tree.easy;
 
-import edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
-
+import edu.university.leetcode.tree.TreeNode;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

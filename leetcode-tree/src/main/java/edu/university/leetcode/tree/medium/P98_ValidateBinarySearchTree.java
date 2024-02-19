@@ -1,11 +1,10 @@
 package edu.university.leetcode.tree.medium;
 
+import edu.university.leetcode.tree.TreeNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Stack;
-
-import static edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
 
 /**
  * 98. Validate Binary Search Tree
@@ -24,10 +23,10 @@ import static edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
  * 4  7 13
  * Output: true
  * Example 2: Input:
- * 5
- * / \
- * 1   4
- * / \
+ *     5
+ *    / \
+ *   1   4
+ *  / \
  * 3   6
  * Output: false
  * Explanation: The input is: [5,1,4,null,null,3,6]. The root node's value
@@ -59,9 +58,6 @@ public class P98_ValidateBinarySearchTree {
     public boolean dfs(TreeNode node, long min, long max) {
         if (node == null) {
             return true;
-        }
-        else if (node != null) {
-            LOG.debug("node value = {}", node.val);
         }
         return node.val > min && node.val < max && dfs(node.left, min, node.val) && dfs(node.right, node.val, max);
     }

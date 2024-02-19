@@ -1,6 +1,7 @@
 package edu.university.leetcode.tree.easy;
 
-import static edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
+import edu.university.leetcode.tree.TreeNode;
+
 /**
  * 108. Convert Sorted Array to Binary Search Tree
  * Given an array where elements are sorted in ascending order, convert it to a height balanced BST.

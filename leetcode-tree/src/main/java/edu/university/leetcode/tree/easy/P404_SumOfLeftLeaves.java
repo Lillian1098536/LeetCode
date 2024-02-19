@@ -1,8 +1,7 @@
 package edu.university.leetcode.tree.easy;
 
+import edu.university.leetcode.tree.TreeNode;
 import lombok.extern.slf4j.Slf4j;
-
-import static edu.university.leetcode.tree.easy.P100_SameTree.TreeNode;
 
 /**
  * 404. Sum of Left Leaves
