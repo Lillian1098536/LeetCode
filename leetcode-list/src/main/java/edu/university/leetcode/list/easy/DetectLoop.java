@@ -1,24 +1,15 @@
 package edu.university.leetcode.list.easy;
 
+import edu.university.leetcode.list.ListNode;
+
 import java.util.HashSet;
 
 /**
- * Given a linked node list, check if the linked node list has loop or not
+ * Given a linked node list, check if the linked node list has looped or not
  */
 public class DetectLoop {
 
     static ListNode head;
-
-    static class ListNode {
-
-        int val;
-        ListNode next;
-
-        public ListNode(int val) {
-            this.val = val;
-            next = null;
-        }
-    }
 
     public static void pushNode(int data) {
         ListNode node = new ListNode(data);
@@ -40,6 +31,7 @@ public class DetectLoop {
 
     public static boolean detectLoop2(ListNode node) {
         ListNode slow = node.next == null ? null : node.next;
+        assert node.next != null;
         ListNode fast = node.next.next == null ? null : node.next.next;
         while (slow != null && fast != null) {
             if (slow == fast) {

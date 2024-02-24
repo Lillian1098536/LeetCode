@@ -1,7 +1,6 @@
 package edu.university.leetcode.list.medium;
 
-import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
+import edu.university.leetcode.list.ListNode;
 
 /**
  * 2. Add Two Numbers
@@ -37,17 +36,6 @@ public class P2_AddTwoNumbers {
             l2 = (l2 == null) ? l2 : l2.next;
         }
         return head.next;
-    }
-
-    @Data
-    public static class ListNode {
-
-        public int val;
-        public ListNode next;
-
-        public ListNode(int val) {
-            this.val = val;
-        }
     }
 
 }

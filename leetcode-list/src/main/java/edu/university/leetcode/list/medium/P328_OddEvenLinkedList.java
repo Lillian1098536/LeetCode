@@ -1,6 +1,8 @@
 package edu.university.leetcode.list.medium;
 
 
+import edu.university.leetcode.list.ListNode;
+
 /**
  * 328. Odd Even Linked List
  * Solution
@@ -15,17 +17,6 @@ package edu.university.leetcode.list.medium;
  * The length of the linked list is between [0, 10^4].
  */
 public class P328_OddEvenLinkedList {
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() { }
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     public ListNode oddEvenList(ListNode head) {
         if (head == null || head.next == null) {

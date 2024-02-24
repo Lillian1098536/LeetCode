@@ -1,5 +1,7 @@
 package edu.university.leetcode.list.hard;
 
+import edu.university.leetcode.list.ListNode;
+
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -33,12 +35,6 @@ public class P23_MergeKSortedLists {
             if (tmp.next != null) pq.offer(tmp.next);
         }
         return head.next;
-    }
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
     }
 
     public ListNode mergeKLists2(ListNode[] lists) {
