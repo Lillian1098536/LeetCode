@@ -47,13 +47,10 @@ public class P3_LongestSubstringWithoutRepeatingCharacters {
         int longest = 0, start = 0;
         int[] dict = new int[NO_OF_CHARS];
         for (int i = 0; i < s.length(); i++) {
-            log.debug("dict[{}]={} ", s.charAt(i), dict[s.charAt(i)]);
             start = Math.max(dict[s.charAt(i)], start);
-            log.debug("start={}", start);
             longest = Math.max(longest, i - start + 1);
             dict[s.charAt(i)] = i + 1;
         }
-        log.debug("lengthOfLongestSubstring={}", longest);
         return longest;
     }
 
@@ -63,7 +60,7 @@ public class P3_LongestSubstringWithoutRepeatingCharacters {
      * @param s
      * @return longest
      */
-    public static int longeseSubstring(String s) {
+    public static int longestSubstring(String s) {
         int longest = 0, start = 0;
         Map<Character, Integer> map = new HashMap<>();
         for (int i = 0, len = s.length(); i < len; i++) {
@@ -73,7 +70,7 @@ public class P3_LongestSubstringWithoutRepeatingCharacters {
             map.put(s.charAt(i), i + 1);
             longest = Math.max(longest, i - start + 1);
         }
-        log.debug("longeseSubstring={}", longest);
+        log.debug("longestSubstring={}", longest);
         return longest;
     }
 

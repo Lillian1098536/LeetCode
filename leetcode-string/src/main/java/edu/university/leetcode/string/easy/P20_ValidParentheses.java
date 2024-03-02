@@ -14,7 +14,7 @@ import java.util.Stack;
 @Slf4j
 public class P20_ValidParentheses {
 
-    public static boolean isValid(String s) {
+    public static boolean isValid1(String s) {
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
             log.debug("i={}", i);
@@ -44,7 +44,7 @@ public class P20_ValidParentheses {
         put('[', ']');
     }};
 
-    public static boolean isValidParentheses(String s) {
+    public static boolean isValid2(String s) {
         Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
             int q = "(){}[]".indexOf(s.substring(i, i + 1));
@@ -61,4 +61,40 @@ public class P20_ValidParentheses {
         return stack.empty();
     }
 
+    /**
+     * brute force
+     * @param s
+     * @return
+     */
+    public boolean isValid3(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == '(' || c == '{' || c == '[') stack.push(c);
+            else {
+                if (stack.isEmpty()) return false;
+                char pre = stack.pop();
+                if (pre == '(' && c != ')') return false;
+                if (pre == '{' && c != '}') return false;
+                if (pre == '[' && c != ']') return false;
+            }
+        }
+        return stack.isEmpty();
+    }
+
+    /**
+     * assume it's a pair
+     * @param s
+     * @return
+     */
+    public boolean isValid4(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : s.toCharArray()) {
+            if (c == '(') stack.push(')');
+            else if (c == '{') stack.push('}');
+            else if (c == '[') stack.push(']');
+            else if (stack.isEmpty() || stack.pop() != c) return false;
+        }
+        return stack.isEmpty();
+    }
 }

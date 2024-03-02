@@ -31,25 +31,25 @@ public class P3_LongestSubstringWithoutRepeatingCharactersTest {
 
     @Test
     public void longeseSubstringTest1() {
-        int result = P3_LongestSubstringWithoutRepeatingCharacters.longeseSubstring("abc");
+        int result = P3_LongestSubstringWithoutRepeatingCharacters.longestSubstring("abc");
         assertEquals(3, result);
     }
 
     @Test
     public void longeseSubstringTest2() {
-        int result = P3_LongestSubstringWithoutRepeatingCharacters.longeseSubstring("bbbbb");
+        int result = P3_LongestSubstringWithoutRepeatingCharacters.longestSubstring("bbbbb");
         assertEquals(1, result);
     }
 
     @Test
     public void longeseSubstringTest3() {
-        int result = P3_LongestSubstringWithoutRepeatingCharacters.longeseSubstring("pwwkew");
+        int result = P3_LongestSubstringWithoutRepeatingCharacters.longestSubstring("pwwkew");
         assertEquals(3, result);
     }
 
     @Test
     public void longeseSubstringTest4() {
-        int result = P3_LongestSubstringWithoutRepeatingCharacters.longeseSubstring("aab");
+        int result = P3_LongestSubstringWithoutRepeatingCharacters.longestSubstring("aab");
         assertEquals(2, result);
     }
 }
