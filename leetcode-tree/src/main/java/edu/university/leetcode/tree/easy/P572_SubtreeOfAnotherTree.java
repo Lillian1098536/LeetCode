@@ -49,5 +49,21 @@ public class P572_SubtreeOfAnotherTree {
         subTree.right = new TreeNode(2);
 
         System.out.println(test.isSubtree(root, subTree));
+
+        var left = 1;
+        var right = 2147483647;
+        var result = 0;
+
+        for(int i = 31; i >= 0; i--){
+            var b = 1 << i;
+            if(((left & b) ^ (right & b)) != 0){
+                break;
+            }
+            result |= left & right & b;
+        }
+
+        System.out.println(result);
+
+
     }
 }
