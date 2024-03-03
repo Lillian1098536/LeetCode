@@ -1,6 +1,6 @@
 package edu.university.leetcode.list.easy;
 
-import static edu.university.leetcode.list.medium.P2_AddTwoNumbers.ListNode;
+import edu.university.leetcode.list.ListNode;
 
 /**
  * 237. Delete Node in a Linked List

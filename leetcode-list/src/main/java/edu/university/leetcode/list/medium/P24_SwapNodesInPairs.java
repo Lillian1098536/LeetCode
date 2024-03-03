@@ -1,8 +1,6 @@
 package edu.university.leetcode.list.medium;
 
-import lombok.val;
-
-import static edu.university.leetcode.list.medium.P2_AddTwoNumbers.ListNode;
+import edu.university.leetcode.list.ListNode;
 /**
  * 24. Swap Nodes in Pairs
  * Given a linked list, swap every two adjacent nodes and return its head.

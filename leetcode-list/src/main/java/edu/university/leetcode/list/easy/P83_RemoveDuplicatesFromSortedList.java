@@ -2,7 +2,7 @@ package edu.university.leetcode.list.easy;
 
 import lombok.extern.slf4j.Slf4j;
 
-import static edu.university.leetcode.list.medium.P2_AddTwoNumbers.ListNode;
+import edu.university.leetcode.list.ListNode;
 
 /**
  * 83. Remove Duplicates from Sorted List

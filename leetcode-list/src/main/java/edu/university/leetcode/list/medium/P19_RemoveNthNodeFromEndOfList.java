@@ -1,6 +1,6 @@
 package edu.university.leetcode.list.medium;
 
-import static edu.university.leetcode.list.medium.P2_AddTwoNumbers.ListNode;
+import edu.university.leetcode.list.ListNode;
 
 /**
  * 19. Remove Nth Node From End of List
@@ -10,7 +10,13 @@ import static edu.university.leetcode.list.medium.P2_AddTwoNumbers.ListNode;
  */
 public class P19_RemoveNthNodeFromEndOfList {
 
-    public static ListNode removeNthFromEnd(ListNode head, int n) {
+    /**
+     * double pointer
+     * @param head
+     * @param n
+     * @return
+     */
+    public static ListNode removeNthFromEndDoublePointer(ListNode head, int n) {
         if (head == null || head.next == null) return null;
         ListNode slow = head, fast = head;
         for (int i = 0; i < n; i++) {
@@ -25,6 +31,27 @@ public class P19_RemoveNthNodeFromEndOfList {
             fast = fast.next;
         }
         slow.next = slow.next.next;
+        return head;
+    }
+
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
+        if (head == null || head.next == null) return null;
+        int size = 0;
+        ListNode node = head;
+        while (node != null) {
+            node = node.next;
+            size++;
+        }
+        if (n == size) {
+            head = head.next; //delete the first node
+            return head;
+        }
+        int p = size - n;
+        ListNode tmp = head;
+        for (int i = 0; i < p - 1; i++) {
+            tmp = tmp.next;
+        }
+        tmp.next = tmp.next.next; //remove the node in front of tmp
         return head;
     }
 
