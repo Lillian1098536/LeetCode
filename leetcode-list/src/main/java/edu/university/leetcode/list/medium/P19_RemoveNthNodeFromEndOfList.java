@@ -11,6 +11,7 @@ import edu.university.leetcode.list.ListNode;
 public class P19_RemoveNthNodeFromEndOfList {
 
     /**
+     * Hint: Maintain two pointers and update one with a delay of n steps
      * double pointer
      * @param head
      * @param n
