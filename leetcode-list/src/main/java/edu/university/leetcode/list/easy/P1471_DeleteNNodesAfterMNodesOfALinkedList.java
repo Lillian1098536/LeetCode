@@ -22,21 +22,21 @@ import static edu.university.leetcode.list.ListNode.*;
 public class P1471_DeleteNNodesAfterMNodesOfALinkedList {
 
     public void linkDelete(ListNode head, int m, int n) {
-        ListNode cur = head, p;
+        ListNode retain = head, delete;
         int cnt;
-        while (cur != null) {
-            for (cnt = 1; cnt < m && cur != null; cnt++) {
-                cur = cur.next;
+        while (retain != null) {
+            for (cnt = m; cnt > 1 && retain != null; cnt--) {
+                retain = retain.next;
             }
-            if (cur == null) {
+            if (retain == null) {
                 return;
             }
-            p = cur.next;
-            for (cnt = 1; cnt <= n && p != null; cnt++) {
-                p = p.next;
+            delete = retain.next;
+            for (cnt = n; cnt >= 1 && delete != null; cnt--) {
+                delete = delete.next;
             }
-            cur.next = p;
-            cur = p;
+            retain.next = delete; //delete the node
+            retain = delete;
         }
     }
 
