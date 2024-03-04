@@ -43,19 +43,19 @@ public class P1471_DeleteNNodesAfterMNodesOfALinkedList {
     public static void main(String[] args) {
         P1471_DeleteNNodesAfterMNodesOfALinkedList test = new P1471_DeleteNNodesAfterMNodesOfALinkedList();
         ListNode head = new ListNode(1);
-        head = insertEnd(head, 2);
-        head = insertEnd(head, 3);
-        head = insertEnd(head, 4);
-        head = insertEnd(head, 5);
-        head = insertEnd(head, 6);
-        head = insertEnd(head, 7);
-        head = insertEnd(head, 8);
-        head = insertEnd(head, 9);
-        head = insertEnd(head, 10);
+        insertEnd(head, 2);
+        insertEnd(head, 3);
+        insertEnd(head, 4);
+        insertEnd(head, 5);
+        insertEnd(head, 6);
+        insertEnd(head, 7);
+        insertEnd(head, 8);
+        insertEnd(head, 9);
+        insertEnd(head, 10);
         int m = 3, n = 2;
-        System.out.println("M="+ m + "N=\"+ n +  Given ListNode\n" + printListNode(head));
+        System.out.println("M=" + m + " N=" + n +  " Given ListNode\n" + printListNode(head));
         test.linkDelete(head, m, n);
-        System.out.println("After deletion ListNode\n" + printListNode(head));
+        System.out.println("After deletion\n" + printListNode(head));
     }
 
 }
