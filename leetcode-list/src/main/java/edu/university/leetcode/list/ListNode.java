@@ -192,6 +192,16 @@ public class ListNode {
         }
     }
 
+    public static String printListNode(ListNode head) {
+        ListNode tmp = head;
+        StringBuilder sb = new StringBuilder();
+        while (tmp != null) {
+            sb.append(tmp.val).append("->");
+            tmp = tmp.next;
+        }
+        return sb.substring(0, sb.length() - 2);
+    }
+
     public static void main(String[] args) {
         ListNode root = new ListNode(1);
         root.next = new ListNode(2);

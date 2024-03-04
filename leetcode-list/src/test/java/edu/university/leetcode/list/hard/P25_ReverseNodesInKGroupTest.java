@@ -3,8 +3,7 @@ package edu.university.leetcode.list.hard;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static edu.university.leetcode.list.hard.P25_ReverseNodesInKGroup.ListNode;
-
+import edu.university.leetcode.list.ListNode;
 public class P25_ReverseNodesInKGroupTest {
     P25_ReverseNodesInKGroup test = new P25_ReverseNodesInKGroup();
     @Test

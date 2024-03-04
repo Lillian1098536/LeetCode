@@ -2,7 +2,7 @@ package edu.university.leetcode.list.easy;
 
 import org.junit.Test;
 
-import static edu.university.leetcode.list.medium.P2_AddTwoNumbers.ListNode;
+import edu.university.leetcode.list.ListNode;
 import static org.junit.Assert.assertTrue;
 
 public class P234_PalindromeLinkedListTest {
