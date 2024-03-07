@@ -53,6 +53,8 @@ public class P876_MiddleOfTheLinkedList {
         insertEnd(head, 4);
         insertEnd(head, 5);
         System.out.println(printNode(test.middleNode(head)));
+        insertEnd(head, 6);
+        System.out.println(printNode(test.middleNode(head)));
         System.out.println(printNode(test.middleNodeSize(head)));
     }
 }
