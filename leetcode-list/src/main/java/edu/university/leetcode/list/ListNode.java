@@ -196,32 +196,32 @@ public class ListNode {
         ListNode root = new ListNode(1);
         root.next = new ListNode(2);
         root.next.next = new ListNode(3);
-        System.out.println("Insert in the beginning " + toString(insertBegin(root, 4)));
-        System.out.println("Insert at the end " + toString(insertEnd(root, 5)));
-        System.out.println("Insert before node " + toString(insertBefore(root, 6, 2)));
-        System.out.println("Insert after node " + toString(insertAfter(root, 7, 2)));
-        System.out.println("Insert at position " + toString(insertPosition(root, 8, 1)));
-        System.out.println("Insert at position " + toString(insertPosition(root, 9, 2)));
-        System.out.println("Insert at position " + toString(insertPosition(root, 10, 3)));
-        System.out.println("Insert at position " + toString(insertPosition(root, 11, 9)));
-        System.out.println("Insert at position " + toString(insertPosition(root, 12, 11)));
-        System.out.println("Delete a node " + toString(deleteNode(root, 3)));
-        System.out.println("Delete a node " + toString(deleteNode(root, 5)));
-        System.out.println("Reverse a node " + toString(reverse(root)));
+        System.out.println("Insert in the beginning " + printNode(insertBegin(root, 4)));
+        System.out.println("Insert at the end " + printNode(insertEnd(root, 5)));
+        System.out.println("Insert before node " + printNode(insertBefore(root, 6, 2)));
+        System.out.println("Insert after node " + printNode(insertAfter(root, 7, 2)));
+        System.out.println("Insert at position " + printNode(insertPosition(root, 8, 1)));
+        System.out.println("Insert at position " + printNode(insertPosition(root, 9, 2)));
+        System.out.println("Insert at position " + printNode(insertPosition(root, 10, 3)));
+        System.out.println("Insert at position " + printNode(insertPosition(root, 11, 9)));
+        System.out.println("Insert at position " + printNode(insertPosition(root, 12, 11)));
+        System.out.println("Delete a node " + printNode(deleteNode(root, 3)));
+        System.out.println("Delete a node " + printNode(deleteNode(root, 5)));
+        System.out.println("Reverse a node " + printNode(reverse(root)));
         ListNode head = new ListNode(1);
         head.next = new ListNode(6);
         head.next.next = new ListNode(5);
         head.next.next.next = new ListNode(3);
         head.next.next.next.next = new ListNode(7);
-        System.out.println("Bubble sort " + toString(bubbleSort(head)));
+        System.out.println("Bubble sort " + printNode(bubbleSort(head)));
         ListNode l2 = new ListNode(2);
         l2.next = new ListNode(4);
         l2.next.next = new ListNode(8);
-        System.out.println("Merge sorted lists" + toString(mergeSorted(head, l2)));
+        System.out.println("Merge sorted lists" + printNode(mergeSorted(head, l2)));
 
     }
 
-    public static String toString(ListNode root) {
+    public static String printNode(ListNode root) {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
         while (root != null) {
